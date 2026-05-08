@@ -1,2 +1,3 @@
-# C
-### Swapping Rust for C tbh
+# C code
+---
+Simple learning timeline
