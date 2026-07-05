@@ -1,3 +1,1 @@
-# C code
----
-Simple learning timeline
+# C++ code
