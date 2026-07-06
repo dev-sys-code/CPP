@@ -6,7 +6,8 @@
 
 using std::endl;
 
-void validateNumber(int* size) {
+void validateNumber(int* size)
+{
     using std::out_of_range;
     using std::invalid_argument;
     using std::cerr;
