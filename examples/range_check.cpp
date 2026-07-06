@@ -13,7 +13,7 @@ void validateNumber(int* size) {
     using std::cout;
     using std::cin;
 
-    bool valid = false;
+    bool valid{false};
     do
     {
         try {
@@ -31,14 +31,13 @@ void validateNumber(int* size) {
             valid = false;
         } catch (...) {
             cerr << "Unexpected error occurred" << endl;
-            *size;
         }
     } while (!valid);
 }
 
 int main()
 {
-    int user_number;
+    int user_number{};
 
     validateNumber(&user_number);
 
