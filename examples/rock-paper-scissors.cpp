@@ -18,7 +18,7 @@ int main() {
     using std::endl;
     using std::system;
 
-    array choices{"Rock", "Paper", "Scissors"};
+    array<string, 3> choices{"Rock", "Paper", "Scissors"};
     string user_input{};
     int computerNum{};
     while (user_input != "0") {
