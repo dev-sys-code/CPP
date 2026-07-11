@@ -45,6 +45,8 @@ void difficulty(int& difficulty)
         }
         std::cout << "Difficulty set\n\n";
 
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Error: " << e.what() << "\n";
     } catch (const std::out_of_range& e) {
         std::cerr << "Error: " << e.what() << "\n";
     } catch (...) {
