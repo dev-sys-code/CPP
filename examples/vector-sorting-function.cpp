@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-void numbers(const bool sorted, const std::vector<int> nums);
+void numbers(const bool sorted, const std::vector<int>& nums);
 
 int main()
 {
