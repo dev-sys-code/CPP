@@ -19,7 +19,8 @@ int length() {
     return length;
 }
 
-std::string passwordMaker(const int length) {
+std::string passwordMaker(const int length)
+{
     std::string chars{"ABCDEFGHIJKLMNOPQRSTUVWXZYabcdefhijklmnopqrstuvxyz123456789!?$"};
     std::string password{};
 
