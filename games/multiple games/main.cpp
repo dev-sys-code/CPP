@@ -9,6 +9,10 @@
 #include <random>
 #include <cstdlib>
 
+void randomNumberGenerator(int& number);
+int chooseDifficulty(const int number);
+void numGuessGame(const int randomNum);
+
 int main() {
     using std::cout;
     using std::cin;
@@ -77,5 +81,4 @@ void numGuessGame(const int randomNum)
             std::cout << "You win!\n";
         }
     }
-
 }
