@@ -26,7 +26,10 @@ int main() {
             
             cin >> choice;
             switch (choice)
-            {
+            {   
+                case 1:
+                    number = chooseDifficulty(number);
+                    randomNumberGenerator(number);
                 default: throw std::out_of_range("Out of range");
             }
 
@@ -46,11 +49,33 @@ void randomNumberGenerator(int& number)
     number = random(gen);
 }
 
-bool chooseDifficulty(const int number) {
+int chooseDifficulty(const int number)
+{
     switch (number)
     {
-        case 1: return true;
-        case 2: return false;
+        case 1: return 10;
+        case 2: return 25;
         default: std::cout << "Unknown error occured\n";
     }
+}
+
+void numGuessGame(const int randomNum)
+{
+    int guesses{3}, number{};
+
+    while (guesses != 0)
+    {
+        std::cout << "Guess the number:\n> ";
+        std::cin >> number;
+        if (number > randomNum) {
+            guesses --;
+            std::cout << "Too high! " << guesses << " guesses remaining!\n";
+        } else if (number < randomNum) {
+            guesses --;
+            std::cout << "Too low! " << guesses << " guesses remaining!\n";
+        } else {
+            std::cout << "You win!\n";
+        }
+    }
+
 }
