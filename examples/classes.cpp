@@ -23,7 +23,7 @@ int main()
     using std::string;
 
     string name{};
-    int age;
+    int age{};
 
     cout << "Name: \n> ";
     getline(cin, name);
