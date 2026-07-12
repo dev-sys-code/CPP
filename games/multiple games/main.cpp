@@ -10,7 +10,7 @@
 int main() {
     int choice{}, difficultyChoice{}, number{};
 
-    std::cout << "Select Difficulty: (1) Easy, (2) Hard\n> ";
+    std::cout << "Select Difficulty:\n.\main.cpp(1) Easy\n(2) Hard\n> ";
     std::cin >> difficultyChoice;
 
     number = chooseDifficulty(difficultyChoice);
