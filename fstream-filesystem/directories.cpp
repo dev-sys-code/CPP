@@ -1,15 +1,18 @@
 #include <iostream>
-#include <filesystem>
+#include <fstream>
 #include <string>
 
-namespace fs = std::filesystem;
+void fileExample() {
+    std::ofstream outFile("text.txt");
+
+    if (outFile.is_open()) {
+        outFile << "I am writing to a file";
+    } else {
+        std::cerr << "Error";
+    }
+}
 
 int main() {
-    fs::path targetDir{"."};
-
-    for (const auto& entry : fs::directory_iterator(targetDir)) {
-        std::cout << entry.path().filename() << "(Size: "
-                  << (entry.is_regular_file() ? std::to_string(entry.file_size()) : "N/A")
-                  << " bytes)";
-    }
+    fileExample();
+    return 0;
 }
