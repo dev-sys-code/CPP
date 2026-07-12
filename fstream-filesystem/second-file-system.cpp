@@ -3,7 +3,6 @@
 #include <string>
 
 void textForFile(std::string& text);
-
 void fileWrite(const std::string& text);
 
 int main() {
