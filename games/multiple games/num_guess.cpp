@@ -1,6 +1,6 @@
 #include <iostream>
 #include <random>
-#include "num-guess.h"
+#include "num_guess.h"
 
 void randomNumberGenerator(int& number)
 {

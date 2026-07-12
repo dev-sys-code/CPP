@@ -5,80 +5,15 @@
 */  
 
 #include <iostream>
-#include <string>
-#include <random>
-#include <cstdlib>
-
-void randomNumberGenerator(int& number);
-int chooseDifficulty(const int number);
-void numGuessGame(const int randomNum);
+#include "num_guess.h"
 
 int main() {
-    using std::cout;
-    using std::cin;
-    using std::cerr;
+    int choice{}, difficultyChoice{}, number{};
 
-    int choice{}, number{};
+    std::cout << "Select Difficulty: (1) Easy, (2) Hard\n> ";
+    std::cin >> difficultyChoice;
 
-    do
-    {
-        try
-        {
-            cout << "(1) Number Guessing Game\n"
-                 << "(2) Naughts and Crosses\n"
-                 << "(3) Hang man\n";
-            
-            cin >> choice;
-            switch (choice)
-            {   
-                case 1:
-                    number = chooseDifficulty(number);
-                    randomNumberGenerator(number);
-                default: throw std::out_of_range("Out of range");
-            }
-
-        } catch (const std::invalid_argument& e) {
-            cerr << "Error: " << e.what() << "\n";
-        } catch (...) {
-            cerr << "Unknown error occurred\n";
-        }
-    } while (choice != 0);
-}
-
-void randomNumberGenerator(int& number)
-{
-    static std::random_device rd;
-    static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> random(1, number);
-    number = random(gen);
-}
-
-int chooseDifficulty(const int number)
-{
-    switch (number)
-    {
-        case 1: return 10;
-        case 2: return 25;
-        default: std::cout << "Unknown error occured\n";
-    }
-}
-
-void numGuessGame(const int randomNum)
-{
-    int guesses{3}, number{};
-
-    while (guesses != 0)
-    {
-        std::cout << "Guess the number:\n> ";
-        std::cin >> number;
-        if (number > randomNum) {
-            guesses --;
-            std::cout << "Too high! " << guesses << " guesses remaining!\n";
-        } else if (number < randomNum) {
-            guesses --;
-            std::cout << "Too low! " << guesses << " guesses remaining!\n";
-        } else {
-            std::cout << "You win!\n";
-        }
-    }
+    number = chooseDifficulty(difficultyChoice);
+    randomNumberGenerator(number);
+    numGuessGame(number);
 }
