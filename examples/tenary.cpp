@@ -4,7 +4,7 @@ int main()
 {
     using std::cout;
     int grade{75};
-    
-    (grade >= 50) ? cout << "Pass" : cout << "Fail";
+
+    cout << (grade >= 50 ? "Pass" : "Fail");
     return 0;
 }
