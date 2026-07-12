@@ -2,17 +2,30 @@
 #include <fstream>
 #include <string>
 
-void fileExample() {
+void textForFile(std::string& text);
+
+void fileWrite(const std::string& text);
+
+int main() {
+    std::string text{};
+
+    textForFile(text);
+    fileWrite(text);
+    return 0;
+}
+
+void textForFile(std::string& text) {
+    std::cout << "Enter text:\n> ";
+    std::getline(std::cin, text);
+}
+
+void fileWrite(const std::string& text) {
     std::ofstream outFile("text.txt");
 
     if (outFile.is_open()) {
-        outFile << "I am writing to a file";
+        outFile << text;
+        std::cout << "Successfuly writen to file";
     } else {
         std::cerr << "Error";
     }
-}
-
-int main() {
-    fileExample();
-    return 0;
 }
