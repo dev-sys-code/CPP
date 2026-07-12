@@ -1,2 +1,2 @@
 # C++ code
-Low level programming seems cool ig
+# Learning for fun 🔥
