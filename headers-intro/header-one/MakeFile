@@ -1,3 +1,5 @@
+# g++ only
+
 all:
 	g++ main.cpp functions.cpp -o main.exe
 	./main.exe
