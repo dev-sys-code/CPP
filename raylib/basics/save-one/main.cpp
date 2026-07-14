@@ -1,8 +1,8 @@
 #include "raylib.h"
 
 struct Player {
-    int position;
-    int speed;
+    Vector2 position;
+    float speed;
 };
 
 int main() {
@@ -13,14 +13,22 @@ int main() {
     InitWindow(width, height, "First program");
 
     Player p;
-    p.position = 5;
+    p.position = {(float)width / 2, (float)height / 2};
+    p.speed = 5.0f;
+
+    SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        BeginDrawing();
-        DrawRectangle((width / 2), (height / 2), PLAYERWIDTH, PLAYERHEIGHT, BLUE);
+        if (IsKeyDown(KEY_W)) p.position.y -= p.speed;
+        if (IsKeyDown(KEY_A)) p.position.x -= p.speed;
+        if (IsKeyDown(KEY_S)) p.position.y += p.speed;
+        if (IsKeyDown(KEY_D)) p.position.x += p.speed;
 
-        if (IsKeyDown(KEY_W)) 
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        DrawRectangle((int)p.position.x, (int)p.position.y, PLAYERWIDTH, PLAYERHEIGHT, BLUE);
         EndDrawing();
     }
-
+    CloseWindow();
+    return 0;
 }
