@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "withdraw.h"
 #include "deposit.h"
 
@@ -6,6 +7,7 @@ int main()
 {
     using std::cout;
     using std::cin;
+    using std::system;
 
     int choice{};
     float balance{100}, amount{30};
@@ -13,8 +15,9 @@ int main()
     while (true)
         {
         try
-        {
-            cout << "\nBalance: £" << balance << "\n\n(1) Withdraw\n(2) Deposit\n\n\n(0) Exit\n    >_ ";
+        {   
+            system("cls");
+            cout << "\nBalance: £" << balance << "\n\n(1) Withdraw\n(2) Deposit\n\n(0) Exit\n    >_ ";
             cin.clear();
             cin >> choice;
 
