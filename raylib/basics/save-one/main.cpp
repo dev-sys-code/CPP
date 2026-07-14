@@ -1,3 +1,5 @@
+// takes users input & changes the position, no error boundaries 
+
 #include "raylib.h"
 
 struct Player {
