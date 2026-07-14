@@ -1,4 +1,4 @@
-// takes users input & changes the position, no error boundaries 
+// takes users input & changes the position, no boundaries yet 
 
 #include "raylib.h"
 
