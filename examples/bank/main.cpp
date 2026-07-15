@@ -28,7 +28,7 @@ int main()
                 case 0: return 0;
                 case 1: withdraw(balance, amount, cash); break;
                 case 2: deposit(balance, amount, cash); break;
-                default: throw std::out_of_range("Keep between (0-3)");
+                default: throw std::out_of_range("Keep between (0-2)");
             }
         }
         catch (const std::out_of_range& e)
