@@ -16,8 +16,7 @@ int main()
         {
         try
         {   
-            system("cls");
-            cout << "\nBalance: £" << balance << "\n\n(1) Withdraw\n(2) Deposit\n\n(0) Exit\n    >_ ";
+            cout << "\nBalance: " << balance << "\n\n(1) Withdraw\n(2) Deposit\n\n(0) Exit\n    >_ ";
             cin.clear();
             cin >> choice;
 
