@@ -1,7 +1,7 @@
-#include "withdraw.h"
 #include <iostream>
+#include "withdraw.h"
 
-void withdraw(float& balance, float& amount)
+void withdraw(float& balance, float& amount, float& cash)
 {
     using std::cout;
     using std::cin;
@@ -31,6 +31,7 @@ void withdraw(float& balance, float& amount)
             else if (confirm == "y" || confirm == "Y")
             {
                 balance -= amount;
+                cash += amount;
             }
             else
             {
@@ -50,9 +51,6 @@ void withdraw(float& balance, float& amount)
     else
     {
         balance -= amount;
+        cash += amount;
     }
-}
-
-void add() {
-
 }
