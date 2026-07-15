@@ -10,7 +10,7 @@ int main()
     using std::system;
 
     int choice{};
-    float balance{100}, amount{30};
+    float balance{100}, amount{};
 
     while (true)
         {
