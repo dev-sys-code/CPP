@@ -1,6 +1,6 @@
-#ifndef FUNCTION_H
-#define FUNCTION_H
+#ifndef WITHDRAW_H
+#define WITHDRAW_H
 
-void withdraw(float& balance, float& amount);
-
+void withdraw(float& balance, float& amount, float& cash);
+    
 #endif
