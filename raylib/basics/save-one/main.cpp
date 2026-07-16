@@ -1,34 +1,30 @@
-// takes users input & changes the position, no boundaries yet 
-
 #include "raylib.h"
 
 struct Player {
-    Vector2 position;
+    Vector2 pos;
     float speed;
 };
 
 int main() {
     int width{800}, height{500};;
 
-    const int PLAYERWIDTH{50}, PLAYERHEIGHT{50};
-
-    InitWindow(width, height, "First program");
-
-    Player p;
-    p.position = {(float)width / 2, (float)height / 2};
-    p.speed = 5.0f;
+    InitWindow(width, height, "My first game");
+    Player p{((float)width/2), ((float)height/2)};
+    p.speed = 500.0f;
 
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        if (IsKeyDown(KEY_W)) p.position.y -= p.speed;
-        if (IsKeyDown(KEY_A)) p.position.x -= p.speed;
-        if (IsKeyDown(KEY_S)) p.position.y += p.speed;
-        if (IsKeyDown(KEY_D)) p.position.x += p.speed;
+        float dt{GetFrameTime()};
+
+        if (IsKeyDown(KEY_W)) p.pos.y -= p.speed * dt;
+        if (IsKeyDown(KEY_S)) p.pos.y += p.speed * dt;
+        if (IsKeyDown(KEY_A)) p.pos.x -= p.speed * dt;
+        if (IsKeyDown(KEY_D)) p.pos.x += p.speed * dt;
 
         BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawRectangle((int)p.position.x, (int)p.position.y, PLAYERWIDTH, PLAYERHEIGHT, BLUE);
+            ClearBackground(RAYWHITE);
+            DrawRectangleV(p.pos, {50, 50}, BLUE);
         EndDrawing();
     }
     CloseWindow();
