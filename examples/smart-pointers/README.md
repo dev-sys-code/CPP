@@ -1,2 +1,2 @@
-## Shared pointers
+## Smart Pointers
 ---
