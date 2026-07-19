@@ -4,8 +4,7 @@ void showBalance(double& money);
 void deposit(double& money);
 void withdraw(double& money);
 
-int main()
-{
+int main() {
     using std::cout;
     using std::cin;
     int user_input{};
@@ -27,13 +26,11 @@ int main()
     return 0;
 }
 
-void showBalance(double& money) 
-{
+void showBalance(double& money) {
     std::cout << "Balance: \u00A3" << money << std::endl;
 }
 
-void deposit(double& money)
-{
+void deposit(double& money) {
     double deposit{};
     std::cout << "Deposit: " << std::endl;
     std::cin >> deposit;
@@ -41,8 +38,7 @@ void deposit(double& money)
     money += deposit;
 }
 
-void withdraw(double& money)
-{
+void withdraw(double& money) {
     double withdraw{};
     std::cout << "Withdraw: " << std::endl;
     std::cin >> withdraw;
