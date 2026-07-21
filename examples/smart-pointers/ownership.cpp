@@ -12,5 +12,6 @@ int main() {
     std::cout << "Before function: " << *p << "\n";
     p = takeOwnerReturn(std::move(p));
     std::cout << "After function: " << *p << "\n";
+   
     return 0;
 }
