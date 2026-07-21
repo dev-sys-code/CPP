@@ -15,4 +15,6 @@ int main()
 
     addBoth(&numOne, &numTwo, &sum);
     cout << sum;
+
+   return 0;
 }
