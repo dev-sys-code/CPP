@@ -1,17 +1,16 @@
 #include <iostream>
 #include <memory>
 
-auto takeOwnerReturn(std::unique_ptr<int> ptr) {
-    *ptr = 42;
-    std::cout << "In function: " << *ptr << "\n";
-    return ptr;
-}
+void transferOwnership(std::unique_ptr<int> num);
 
 int main() {
-    auto p{std::make_unique<int>(100)};
-    std::cout << "Before function: " << *p << "\n";
-    p = takeOwnerReturn(std::move(p));
-    std::cout << "After function: " << *p << "\n";
-   
+    std::unique_ptr<int> num = std::make_unique<int>(42);
+    transferOwnership(std::move(num));
+    std::cout << "Num: " << (num == nullptr ? "Null" : "Not null");
+
     return 0;
+}
+
+void transferOwnership(std::unique_ptr<int> num) {
+    std::cout << "Ownership transferred: " << *num << "\n";
 }
