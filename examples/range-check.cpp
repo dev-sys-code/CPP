@@ -1,5 +1,3 @@
-// few logic errors
-
 #include <iostream>
 #include <exception>
 
