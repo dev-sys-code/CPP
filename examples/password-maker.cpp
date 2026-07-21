@@ -8,6 +8,8 @@ int main()
 {   
     int len = length();
     std::cout << passwordMaker(len);
+
+    return 0;
 }
 
 int length() {
