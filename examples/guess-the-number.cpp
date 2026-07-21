@@ -25,6 +25,8 @@ int main()
     int randomNum{randomNumberGenerator(numOne, numTwo)};
     string win{game(randomNum)};
     winOrLose(win);
+
+    return 0;
 }
 
 int randomNumberGenerator(const int numOne, const int numTwo)
