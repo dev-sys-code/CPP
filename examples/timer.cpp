@@ -11,6 +11,7 @@ int main() {
     std::this_thread::sleep_for(std::chrono::seconds(time));
 
     std::cout << time << "s has passed!";
+    return 0;
 }
 
 void askUser(int& time) {
