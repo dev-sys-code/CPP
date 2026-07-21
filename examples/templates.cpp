@@ -26,6 +26,7 @@ int main()
         case 3: std::cout << div(numOne, numTwo); break;
         case 4: std::cout << tim(numOne, numTwo); break;
     }
+    return 0;
 }
 
 void choice(int& num) {
