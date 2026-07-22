@@ -1,3 +1,5 @@
+// supports decimals + 2 d.p
+
 #include <iostream>
 #include <random>
 #include <iomanip>
