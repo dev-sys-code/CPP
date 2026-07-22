@@ -1,2 +1,2 @@
 # C++ code
-# Learning for fun 🔥
+### Hope to become an OS dev one day
