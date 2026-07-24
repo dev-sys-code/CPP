@@ -1,6 +1,6 @@
-#include "raylib.h"
-#include <random>
+\#include "raylib.h"
 #include <iostream>
+#include <random>
 
 int randomNum(const int HEIGHT);
 
@@ -44,6 +44,8 @@ int main() {
         350.0f
     };
 
+    Texture2D background{LoadTexture("images/Background.png")};
+
     while (!WindowShouldClose()) {
         float dt{GetFrameTime()};
 
@@ -84,6 +86,7 @@ int main() {
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
+        DrawTexture(background, 0, 0, WHITE);
         DrawText(TextFormat("Score: %i", score), WIDTH / 2 - 50, 10, 20.0f, BLACK);
 
         DrawRectangle(player.position.x, player.position.y, 30, 100, BLACK); // player paddle
