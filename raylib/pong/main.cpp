@@ -5,6 +5,12 @@ struct Player {
     float speed;
 };
 
+struct Ball {
+    Vector2 position;
+    float speed;
+    float radius;
+};
+
 int main() {
     const int WIDTH{850};
     const int HEIGHT{400};
