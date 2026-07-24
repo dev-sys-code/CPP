@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include <random>
+#include <iostream>
 
 int randomNum(const int HEIGHT);
 
@@ -33,7 +34,7 @@ int main() {
 
     Ball ball {
         { WIDTH / 2, randomNum(HEIGHT) },
-        800.0f,
+        { 400.0f, 300.0f },
         15.0f
     };
 
@@ -59,6 +60,24 @@ int main() {
 
         if (cpu.position.y < 0) cpu.position.y = 0;
         if (cpu.position.y > HEIGHT - 100) cpu.position.y = HEIGHT - 100;
+
+        ball.position.x += ball.velocity.x * dt;
+        ball.position.y += ball.velocity.y * dt;
+
+        if (ball.position.y - ball.radius <= 0 || ball.position.y + ball.radius >= HEIGHT) {
+            ball.velocity.y *= -1.0f;
+        }
+
+        Rectangle playerRect{ player.position.x, player.position.y, 30.0f, 100.0f };
+        Rectangle cpuRect{ cpu.position.x, cpu.position.y, 30.0f, 100.0f };
+
+        if (CheckCollisionCircleRec(ball.position, ball.radius, playerRect)) {
+            ball.velocity.x *= -1.0f;
+        }
+
+        if (CheckCollisionCircleRec(ball.position, ball.radius, cpuRect)) {
+            ball.velocity.x *= -1.0f;
+        }
 
         BeginDrawing();
 
