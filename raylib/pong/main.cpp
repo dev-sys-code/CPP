@@ -1,4 +1,4 @@
-\#include "raylib.h"
+#include "raylib.h"
 #include <iostream>
 #include <random>
 
@@ -23,7 +23,7 @@ struct CPU {
 int main() {
     const int WIDTH{850};
     const int HEIGHT{400};
-    int score{};
+    int score{}, cpu_score{};
 
     InitWindow(WIDTH, HEIGHT, "RAYLIB");
     SetTargetFPS(144);
@@ -76,21 +76,23 @@ int main() {
 
         if (CheckCollisionCircleRec(ball.position, ball.radius, playerRect)) {
             ball.velocity.x *= -1.0f;
+            score ++;
         }
 
         if (CheckCollisionCircleRec(ball.position, ball.radius, cpuRect)) {
             ball.velocity.x *= -1.0f;
-            score ++;
+            cpu_score++;
         }
 
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
         DrawTexture(background, 0, 0, WHITE);
-        DrawText(TextFormat("Score: %i", score), WIDTH / 2 - 50, 10, 20.0f, BLACK);
+        DrawText(TextFormat("%i", score), WIDTH / 4 + 75, HEIGHT / 2 - 100, 200.0f, BLACK);
+        DrawText(TextFormat("%i", cpu_score), WIDTH / 4 + 225, HEIGHT / 2 - 100, 200.0f, BLACK);
 
         DrawRectangle(player.position.x, player.position.y, 30, 100, BLACK); // player paddle
-        DrawCircleV(ball.position, ball.radius, RED); // ball
+        DrawCircleV(ball.position, ball.radius, BLACK); // ball
         DrawRectangle(cpu.position.x, cpu.position.y, 30, 100, BLACK); // cpu paddle
 
         EndDrawing();
