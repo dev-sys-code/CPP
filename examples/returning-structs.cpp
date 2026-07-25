@@ -14,6 +14,7 @@ Person getStuff() {
 
     std::cout << "Age:\n  >_";
     std::cin >> age;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), "\n");
 
     return {name, age};
 }
