@@ -98,6 +98,7 @@ int main() {
         EndDrawing();
     }
 
+    UnloadTexture(background);
     CloseWindow();
     return 0;
 }
