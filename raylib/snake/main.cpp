@@ -1,4 +1,4 @@
-#include "raylib.h"
+\#include "raylib.h"
 #include <iostream>
 #include <random>
 
@@ -13,13 +13,14 @@ void applePos(const int WIDTH, const int HEIGHT, Vector2& apple) {
 
 int main() {
     const int WIDTH{800}, HEIGHT{800};
-    const int playerWidth{35}, playerHeight{35};
+    int playerWidth{35}, playerHeight{35};
+    const int playerAdd(playerWidth);
 
     InitWindow(WIDTH, HEIGHT, "Snake Game");
     SetTargetFPS(144);
 
     struct Player {
-        Vector2 position{(WIDTH / 2) - (playerWidth / 2), (HEIGHT / 2) - (playerHeight / 2)};
+        Vector2 position{(WIDTH / 2) - (35 / 2), (HEIGHT / 2) - (35 / 2)};
         float speed{300.0f};
     };
 
@@ -75,6 +76,7 @@ int main() {
 
         if (CheckCollisionCircleRec(apple.position, apple.radius, playerRec)) {
             applePos(WIDTH, HEIGHT, apple.position);
+            playerWidth += 35;
         }
 
         if (player.position.y < 0) {
