@@ -85,16 +85,14 @@ int main() {
         }
 
         BeginDrawing();
-
-        ClearBackground(RAYWHITE);
-        DrawTexture(background, 0, 0, WHITE);
-        DrawText(TextFormat("%i", score), WIDTH / 4 + 75, HEIGHT / 2 - 100, 200.0f, BLACK);
-        DrawText(TextFormat("%i", cpu_score), WIDTH / 4 + 225, HEIGHT / 2 - 100, 200.0f, BLACK);
-
-        DrawRectangle(player.position.x, player.position.y, 30, 100, BLACK); // player paddle
-        DrawCircleV(ball.position, ball.radius, BLACK); // ball
-        DrawRectangle(cpu.position.x, cpu.position.y, 30, 100, BLACK); // cpu paddle
-
+            ClearBackground(RAYWHITE);
+            DrawTexture(background, 0, 0, WHITE);
+            DrawText(TextFormat("%i", score), WIDTH / 4 + 75, HEIGHT / 2 - 100, 200.0f, BLACK);
+            DrawText(TextFormat("%i", cpu_score), WIDTH / 4 + 225, HEIGHT / 2 - 100, 200.0f, BLACK);
+    
+            DrawRectangle(player.position.x, player.position.y, 30, 100, BLACK); // player paddle
+            DrawCircleV(ball.position, ball.radius, BLACK); // ball
+            DrawRectangle(cpu.position.x, cpu.position.y, 30, 100, BLACK); // cpu paddle
         EndDrawing();
     }
 
