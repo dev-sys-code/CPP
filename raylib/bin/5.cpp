@@ -42,10 +42,9 @@ int main() {
         if (IsKeyDown(KEY_R)) reset(player, WIDTH, HEIGHT);
 
         BeginDrawing();
-
-        ClearBackground(RAYWHITE);
-        DrawCircleV(player.position, player.radius, player.color);
-        DrawCircleV(enemy.position, enemy.radius, enemy.color);
+            ClearBackground(RAYWHITE);
+            DrawCircleV(player.position, player.radius, player.color);
+            DrawCircleV(enemy.position, enemy.radius, enemy.color);
         EndDrawing();
     }
     CloseWindow();
