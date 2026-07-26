@@ -79,11 +79,13 @@ int main() {
             if (up || down) {
                 playerHeight += 35;
                 playerHeight += playerWidth;
+                playerHeight = 0;
             }
 
             if (left || right) {
                 playerWidth += 35;
                 playerWidth += playerHeight;
+                playerWidth = 0;
             }
         }
 
