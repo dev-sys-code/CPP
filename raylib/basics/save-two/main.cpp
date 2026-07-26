@@ -44,11 +44,9 @@ int main() {
         if (IsKeyDown(KEY_R)) reset(player, WIDTH, HEIGHT);
 
         BeginDrawing();
-
-        DrawTexture(background, 0, 0, WHITE);
-        DrawCircleV(player.position, player.radius, player.color);
-        DrawCircleV(enemy.position, enemy.radius, enemy.color);
-        
+            DrawTexture(background, 0, 0, WHITE);
+            DrawCircleV(player.position, player.radius, player.color);
+            DrawCircleV(enemy.position, enemy.radius, enemy.color);
         EndDrawing();
     }
 
