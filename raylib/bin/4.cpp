@@ -29,8 +29,8 @@ int main() {
         if (IsKeyDown(KEY_D)) player.position.x += player.speed.x;
 
         BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawCircleV(player.position, player.radius, player.color);
+            ClearBackground(RAYWHITE);
+            DrawCircleV(player.position, player.radius, player.color);
         EndDrawing();
 
     }
