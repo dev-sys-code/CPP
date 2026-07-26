@@ -3,7 +3,10 @@
 #include <unordered_map>
 
 int main() {
-    std::string code{"a_var = 90"};
+    std::string code{};
+    std::cout << "Code: ";
+    std::getline(std::cin, code);\
+
     size_t equalPos{code.find('=')};
 
     std::string varName{code.substr(0, equalPos)};
