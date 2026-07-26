@@ -94,15 +94,14 @@ int main() {
         }
 
         BeginDrawing();
-        ClearBackground(RAYWHITE);
-
-        if (!gameOver) {
-            DrawRectangle((int)player.position.x, (int)player.position.y, playerWidth, playerHeight, BLUE);
-            DrawCircleV(apple.position, apple.radius, RED);
-        } else {
-            DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50, BLACK);
-        }
-
+            ClearBackground(RAYWHITE);
+    
+            if (!gameOver) {
+                DrawRectangle((int)player.position.x, (int)player.position.y, playerWidth, playerHeight, BLUE);
+                DrawCircleV(apple.position, apple.radius, RED);
+            } else {
+                DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50, BLACK);
+            }
         EndDrawing();
     }
 
