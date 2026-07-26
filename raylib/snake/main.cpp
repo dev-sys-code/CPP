@@ -5,8 +5,10 @@
 void applePos(const int WIDTH, const int HEIGHT, Vector2& apple) {
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> random(0, WIDTH);
-    std::uniform_int_distribution<> random(0, HEIGHT);
+    std::uniform_int_distribution<> x(0, WIDTH);
+    std::uniform_int_distribution<> y(0, HEIGHT);
+    apple.x = x(gen);
+    apple.y = y(gen);
 }
 
 int main() {
@@ -22,14 +24,15 @@ int main() {
     };
 
     struct Apple {
-        Vector2 position;
-        float radius;
+        Vector2 position{};
+        float radius{20.0f};
     };
 
     Player player;
     Apple apple;
 
-
+    applePos(WIDTH, HEIGHT, apple.position);
+    
     bool up{false}, left{false}, right{true}, down{false};
 
     while (!WindowShouldClose()) {
@@ -91,6 +94,8 @@ int main() {
             DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50.0f, BLACK);
             CloseWindow();
         }
+
+
 
         applePos(WIDTH, HEIGHT, apple.position);
         BeginDrawing();
