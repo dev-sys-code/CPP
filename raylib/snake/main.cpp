@@ -95,7 +95,6 @@ int main() {
 
         BeginDrawing();
             ClearBackground(RAYWHITE);
-    
             if (!gameOver) {
                 DrawRectangle((int)player.position.x, (int)player.position.y, playerWidth, playerHeight, BLUE);
                 DrawCircleV(apple.position, apple.radius, RED);
