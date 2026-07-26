@@ -54,6 +54,26 @@ int main() {
         if (right) player.position.x += player.speed * dt;
         if (down) player.position.y += player.speed * dt;
 
+        if (player.position.y < 0) {
+            player.position.y = 0;
+            DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50.0f, BLACK);
+        }
+
+        if (player.position.y > HEIGHT - playerHeight) {
+            player.position.y = HEIGHT - playerHeight;
+            DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50.0f, BLACK);
+        }
+
+        if (player.position.x < 0) {
+            player.position.x = 0;
+            DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50.0f, BLACK);
+        }
+
+        if (player.position.x > WIDTH - playerWidth) {
+            player.position.x = WIDTH - playerWidth;
+            DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50.0f, BLACK);
+        }
+
         BeginDrawing();
         
         ClearBackground(RAYWHITE);
