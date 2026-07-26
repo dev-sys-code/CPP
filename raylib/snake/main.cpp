@@ -2,22 +2,24 @@
 #include <iostream>
 
 int main() {
-    const int WIDTH{800};
-    const int HEIGHT{800};
+    const int WIDTH{800}, HEIGHT{800};
+    const int playerWidth{50}, playerHeight{50};
 
     InitWindow(WIDTH, HEIGHT, "Snake Game");
     SetTargetFPS(144);
 
     struct Player {
-        Vector2 position{WIDTH / 2 - 25, HEIGHT / 2 - 25};
-        float speed{4000.0f};
+        Vector2 position{(WIDTH / 2) - (playerWidth / 2), (HEIGHT / 2) - (playerHeight / 2)};
+        float speed{300.0f};
     };
 
     Player player;
-    
+
+
+    bool up{false}, left{false}, right{false}, down{false};
+
     while (!WindowShouldClose()) {
         float dt{GetFrameTime()};
-        bool up{false}, left{false}, right{false}, down{false};
 
         if (IsKeyPressed(KEY_W)) {
             up = true;
@@ -44,7 +46,7 @@ int main() {
             up = false;
             left = false;
             right = false;
-            down = true; 
+            down = true;
         }
         
         if (up) player.position.y -= player.speed * dt;
