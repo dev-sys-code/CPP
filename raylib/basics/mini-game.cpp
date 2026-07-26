@@ -37,14 +37,11 @@ int main() {
         if (playerX > WIDTH - PLAYER_WIDTH) playerX = (WIDTH - PLAYER_WIDTH);
 
         BeginDrawing();
-        
         ClearBackground(RAYWHITE);
-        DrawRectangle(playerX, playerY, PLAYER_WIDTH, PLAYER_HEIGHT, BLUE);
-        DrawCircle(enemyX, enemyY, ENEMY_SIZE, RED);
-
-        if (playerX == (enemyX + ENEMY_SIZE)) DrawText("Game Over", (WIDTH / 2), (HEIGHT - 2), 20, BLACK);
-        if (playerY == (enemyY + ENEMY_SIZE)) DrawText("Game Over", (WIDTH / 2), (HEIGHT - 2), 20, BLACK);
-
+            DrawRectangle(playerX, playerY, PLAYER_WIDTH, PLAYER_HEIGHT, BLUE);
+            DrawCircle(enemyX, enemyY, ENEMY_SIZE, RED);
+            if (playerX == (enemyX + ENEMY_SIZE)) DrawText("Game Over", (WIDTH / 2), (HEIGHT - 2), 20, BLACK);
+            if (playerY == (enemyY + ENEMY_SIZE)) DrawText("Game Over", (WIDTH / 2), (HEIGHT - 2), 20, BLACK);
         EndDrawing();
     }
 
