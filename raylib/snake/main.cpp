@@ -5,8 +5,8 @@
 void applePos(const int WIDTH, const int HEIGHT, Vector2& apple) {
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> x(0, WIDTH);
-    std::uniform_int_distribution<> y(0, HEIGHT);
+    std::uniform_int_distribution<> x(35, WIDTH);
+    std::uniform_int_distribution<> y(35, HEIGHT);
     apple.x = (float)x(gen);
     apple.y = (float)y(gen);
 }
@@ -79,13 +79,11 @@ int main() {
             if (up || down) {
                 playerHeight += 35;
                 playerHeight += playerWidth;
-                playerHeight = 0;
             }
 
             if (left || right) {
                 playerWidth += 35;
                 playerWidth += playerHeight;
-                playerWidth = 0;
             }
         }
 
