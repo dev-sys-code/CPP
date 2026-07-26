@@ -16,7 +16,7 @@ int main() {
     Player player;
 
 
-    bool up{false}, left{false}, right{false}, down{false};
+    bool up{false}, left{false}, right{true}, down{false};
 
     while (!WindowShouldClose()) {
         float dt{GetFrameTime()};
@@ -57,7 +57,7 @@ int main() {
         BeginDrawing();
         
         ClearBackground(RAYWHITE);
-        DrawRectangle(player.position.x, player.position.y, 50, 50, BLUE);
+        DrawRectangle(player.position.x, player.position.y, playerWidth, playerHeight, BLUE);
 
         EndDrawing();
     }
