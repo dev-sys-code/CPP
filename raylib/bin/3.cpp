@@ -27,10 +27,8 @@ int main() {
         if (playerX > WIDTH - PLAYER_WIDTH) playerX = (WIDTH - PLAYER_WIDTH);
 
         BeginDrawing();
-        
-        ClearBackground(RAYWHITE);
-        DrawRectangle(playerX, playerY, PLAYER_WIDTH, PLAYER_HEIGHT, BLUE);
-
+            ClearBackground(RAYWHITE);
+            DrawRectangle(playerX, playerY, PLAYER_WIDTH, PLAYER_HEIGHT, BLUE);
         EndDrawing();
     }
 
