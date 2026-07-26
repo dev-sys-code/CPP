@@ -29,9 +29,7 @@ int main() {
 
         ClearBackground(RAYWHITE);
         BeginDrawing();
-        
-        DrawRectangle(player.position.x, player.position.y, player.width, player.height, BLUE);
-
+            DrawRectangle(player.position.x, player.position.y, player.width, player.height, BLUE);
         EndDrawing();
     }
 
