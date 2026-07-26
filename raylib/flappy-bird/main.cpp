@@ -41,10 +41,8 @@ int main() {
         }
 
         BeginDrawing();
-
-        ClearBackground(bg);
-        DrawRectangle(player.position.x, player.position.y, 50, 50, BLACK);
-
+            ClearBackground(bg);
+            DrawRectangle(player.position.x, player.position.y, 50, 50, BLACK);
         EndDrawing();
     }
 
