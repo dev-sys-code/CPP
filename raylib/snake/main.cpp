@@ -76,8 +76,15 @@ int main() {
 
         if (CheckCollisionCircleRec(apple.position, apple.radius, playerRec)) {
             applePos(WIDTH, HEIGHT, apple.position);
-            if (up || down) playerHeight += 35;
-            if (left || right) playerWidth += 35;
+            if (up || down) {
+                playerHeight += 35;
+                playerHeight += playerWidth;
+            }
+
+            if (left || right) {
+                playerWidth += 35;
+                playerWidth += playerHeight;
+            }
         }
 
         if (player.position.y < 0) {
