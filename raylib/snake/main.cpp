@@ -32,7 +32,7 @@ int main() {
     Apple apple;
 
     applePos(WIDTH, HEIGHT, apple.position);
-    
+
     bool up{false}, left{false}, right{true}, down{false};
 
     while (!WindowShouldClose()) {
@@ -71,6 +71,12 @@ int main() {
         if (right) player.position.x += player.speed * dt;
         if (down) player.position.y += player.speed * dt;
 
+        Rectangle playerRec{player.position.x, player.position.y, (float)playerWidth, (float)playerHeight};
+
+        if (CheckCollisionCircleRec(apple.position, apple.radius, playerRec)) {
+            applePos(WIDTH, HEIGHT, apple.position);
+        }
+
         if (player.position.y < 0) {
             player.position.y = 0;
             DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50.0f, BLACK);
@@ -95,9 +101,6 @@ int main() {
             CloseWindow();
         }
 
-
-
-        applePos(WIDTH, HEIGHT, apple.position);
         BeginDrawing();
         
         ClearBackground(RAYWHITE);
