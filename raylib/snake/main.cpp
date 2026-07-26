@@ -7,13 +7,13 @@ void applePos(const int WIDTH, const int HEIGHT, Vector2& apple) {
     static std::mt19937 gen(rd());
     std::uniform_int_distribution<> x(0, WIDTH);
     std::uniform_int_distribution<> y(0, HEIGHT);
-    apple.x = x(gen);
-    apple.y = y(gen);
+    apple.x = (float)x(gen);
+    apple.y = (float)y(gen);
 }
 
 int main() {
     const int WIDTH{800}, HEIGHT{800};
-    int playerWidth{35}, playerHeight{35};
+    int playerWidth{35}, playerHeight{35}, temp{};
     const int playerAdd(playerWidth);
 
     InitWindow(WIDTH, HEIGHT, "Snake Game");
@@ -76,7 +76,8 @@ int main() {
 
         if (CheckCollisionCircleRec(apple.position, apple.radius, playerRec)) {
             applePos(WIDTH, HEIGHT, apple.position);
-            playerWidth += 35;
+            if (up || down) playerHeight += 35;
+            if (left || right) playerWidth += 35;
         }
 
         if (player.position.y < 0) {
