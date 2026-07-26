@@ -10,13 +10,10 @@ int main() {
 
     while (!WindowShouldClose()) {
         BeginDrawing();
-
-        int PLAYER_WIDTH{50};
-        int PLAYER_HEIGHT{50};
-
-        ClearBackground(RAYWHITE);
-        DrawRectangle((WIDTH / 2) - (PLAYER_WIDTH / 2), (HEIGHT / 2) - (PLAYER_HEIGHT / 2), 50, 50, BLUE);
-
+            int PLAYER_WIDTH{50};
+            int PLAYER_HEIGHT{50};
+            ClearBackground(RAYWHITE);
+            DrawRectangle((WIDTH / 2) - (PLAYER_WIDTH / 2), (HEIGHT / 2) - (PLAYER_HEIGHT / 2), 50, 50, BLUE);
         EndDrawing();
     }
 
