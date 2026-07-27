@@ -30,18 +30,18 @@ int main() {
 
     Player player {
         { 20.0f, (HEIGHT / 2) - 100 / 2},
-        400.0f
+        { 400.0f }
     };
 
     Ball ball {
         { WIDTH / 2, randomNum(HEIGHT) },
         { 400.0f, 300.0f },
-        15.0f
+        { 15.0f }
     };
 
     CPU cpu {
         { WIDTH - 50.0f, (HEIGHT / 2) - 100 / 2 },
-        350.0f
+        { 350.0f }
     };
 
     Texture2D background{LoadTexture("images/Background.png")};
@@ -71,6 +71,10 @@ int main() {
             ball.velocity.y *= -1.0f;
         }
 
+        if (ball.position.x - ball.radius <= 0 || ball.position.x + ball.radius >= WIDTH) {
+            ball.velocity.x *= -1.0f;
+        }
+
         Rectangle playerRect{ player.position.x, player.position.y, 30.0f, 100.0f };
         Rectangle cpuRect{ cpu.position.x, cpu.position.y, 30.0f, 100.0f };
 
@@ -87,8 +91,9 @@ int main() {
         BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawTexture(background, 0, 0, WHITE);
-            DrawText(TextFormat("%i", score), WIDTH / 4 + 75, HEIGHT / 2 - 100, 200.0f, BLACK);
-            DrawText(TextFormat("%i", cpu_score), WIDTH / 4 + 225, HEIGHT / 2 - 100, 200.0f, BLACK);
+            DrawText(TextFormat("%i", score), WIDTH / 4 + 75, HEIGHT / 2 - 100, 100.0f, BLACK);
+            DrawText("|", WIDTH / 4, HEIGHT / 2, 50.0f, BLACK);
+            DrawText(TextFormat("%i", cpu_score), WIDTH / 4 + 225, HEIGHT / 2 - 100, 100.0f, BLACK);
     
             DrawRectangle(player.position.x, player.position.y, 30, 100, BLACK); // player paddle
             DrawCircleV(ball.position, ball.radius, BLACK); // ball
