@@ -35,7 +35,7 @@ int main() {
 
     Ball ball {
         { WIDTH / 2, randomNum(HEIGHT) },
-        { 400.0f, 300.0f },
+        { 500.0f, 500.0f },
         { 15.0f }
     };
 
