@@ -71,8 +71,14 @@ int main() {
             ball.velocity.y *= -1.0f;
         }
 
-        if (ball.position.x - ball.radius <= 0 || ball.position.x + ball.radius >= WIDTH) {
+        if (ball.position.x + ball.radius >= WIDTH) {
             ball.velocity.x *= -1.0f;
+            score ++;
+        }
+
+        if (ball.position.x - ball.radius <= 0) {
+            ball.velocity.x *= -1.0f;
+            cpu_score ++;
         }
 
         Rectangle playerRect{ player.position.x, player.position.y, 30.0f, 100.0f };
@@ -91,9 +97,9 @@ int main() {
         BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawTexture(background, 0, 0, WHITE);
-            DrawText(TextFormat("%i", score), WIDTH / 4 + 75, HEIGHT / 2 - 100, 100.0f, BLACK);
+            DrawText(TextFormat("%i", score), WIDTH / 2, HEIGHT / 2 - 100, 100.0f, BLACK);
             DrawText("|", WIDTH / 4, HEIGHT / 2, 50.0f, BLACK);
-            DrawText(TextFormat("%i", cpu_score), WIDTH / 4 + 225, HEIGHT / 2 - 100, 100.0f, BLACK);
+            DrawText(TextFormat("%i", cpu_score), WIDTH / 2, HEIGHT / 2 - 100, 100.0f, BLACK);
     
             DrawRectangle(player.position.x, player.position.y, 30, 100, BLACK); // player paddle
             DrawCircleV(ball.position, ball.radius, BLACK); // ball
