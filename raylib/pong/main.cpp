@@ -84,12 +84,12 @@ int main() {
         Rectangle playerRect{ player.position.x, player.position.y, 30.0f, 100.0f };
         Rectangle cpuRect{ cpu.position.x, cpu.position.y, 30.0f, 100.0f };
 
-        if (CheckCollisionCircleRec(ball.position, ball.radius, playerRect)) {
+        if (CheckCollisionCircleRec(ball.position, ball.radius, playerRect)  && ball.velocity.x < 0) {
             ball.velocity.x *= -1.0f;
             score ++;
         }
 
-        if (CheckCollisionCircleRec(ball.position, ball.radius, cpuRect)) {
+        if (CheckCollisionCircleRec(ball.position, ball.radius, cpuRect)  && ball.velocity.x > 0) {
             ball.velocity.x *= -1.0f;
             cpu_score++;
         }
