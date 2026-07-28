@@ -8,8 +8,14 @@ struct Player {
     const float size{35.0f}; // size of each segment
 };
 
-void snakeUp(int size) {
-    std::cout << size;
+Player snakeUp (int size,
+    Vector2& position,
+    Vector2 velocity) {
+    for (int i{}; i < size; i++) {
+        position.y += velocity.y;
+    }
+
+    return {position.x, position.y};
 }
 void snakeLeft();
 void snakeRight();
@@ -38,7 +44,7 @@ int main() {
 
     while (!WindowShouldClose()) {
         if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP)) {
-            snakeUp((body.size() -1));
+            snakeUp(body.size() -1, player.position.y, player.velocity.y);
         }
 
         if (IsKeyPressed(KEY_A) || IsKeyPressed(KEY_LEFT)) {
