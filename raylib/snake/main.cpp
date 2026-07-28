@@ -17,8 +17,7 @@ int main() {
     const int WIDTH{600};
     const int HEIGHT{600};
     float currentPos{40.0f};
-    int direction{};
-
+    
     InitWindow(WIDTH, HEIGHT, "Game");
 
     
@@ -37,19 +36,19 @@ int main() {
 
     while (!WindowShouldClose()) {
         if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP)) {
-            direction = 1;
+
         }
 
-        if (IsKeyPressed(KEY_A) || IsKeyPressed(KEY_RIGHT)) {
-            direction = 2;
+        if (IsKeyPressed(KEY_A) || IsKeyPressed(KEY_LEFT)) {
+
         }
 
         if (IsKeyPressed(KEY_S) || IsKeyPressed(KEY_DOWN)) {
-            direction = 3;
+
         }
 
-        if (IsKeyPressed(KEY_D) || IsKeyPressed(KEY_LEFT)) {
-            direction = 4;
+        if (IsKeyPressed(KEY_D) || IsKeyPressed(KEY_RIGHT)) {
+
         }
 
         BeginDrawing(); 
