@@ -44,7 +44,7 @@ int main() {
 
     while (!WindowShouldClose()) {
         if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP)) {
-            snakeUp(body.size() -1, player.position.y, player.velocity.y);
+            snakeUp(body.size() -1, {player.position}, {player.velocity});
         }
 
         if (IsKeyPressed(KEY_A) || IsKeyPressed(KEY_LEFT)) {
