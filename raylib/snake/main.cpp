@@ -18,9 +18,9 @@ Player snakeUp (int size,
     std::cout << position.y << "\n";
     return {position.x, position.y};
 }
-void snakeLeft();
-void snakeRight();
-void snakeDown();
+Player snakeLeft();
+Player snakeRight();
+Player snakeDown();
 
 int main() {
     const int WIDTH{600};
