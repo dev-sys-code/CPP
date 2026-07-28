@@ -5,7 +5,7 @@
 struct Player {
     Vector2 position;
     Vector2 velocity;
-    const float size{35.0f}; // size of each segment
+    const float size{25.0f}; // size of each segment
 };
 
 Player snakeUp (int size,
@@ -13,11 +13,13 @@ Player snakeUp (int size,
     Vector2 velocity) {
     for (int i{}; i < size; i++) {
         position.y += velocity.y;
+        position.x = position.y;
     }
 
     std::cout << position.y << "\n";
-    return {position.x, position.y};
+    return { position.x, position.y };
 }
+
 Player snakeLeft();
 Player snakeRight();
 Player snakeDown();
@@ -37,11 +39,11 @@ int main() {
     
     std::vector<Vector2> body{
         { WIDTH / 2, HEIGHT / 2 },
-        { WIDTH / 2, HEIGHT / 2 + 40.0f },
-        { WIDTH / 2, HEIGHT / 2 + 80.0f }
+        { WIDTH / 2, HEIGHT / 2 + 30.0f },
+        { WIDTH / 2, HEIGHT / 2 + 60.0f }
     };
 
-    body.push_back({WIDTH / 2, HEIGHT / 2 + 80.0f});
+    body.push_back({WIDTH / 2, HEIGHT / 2 + 60.0f});
 
     while (!WindowShouldClose()) {
         if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP)) {
