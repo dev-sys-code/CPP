@@ -15,6 +15,7 @@ Player snakeUp (int size,
         position.y += velocity.y;
     }
 
+    std::cout << position.y << "\n";
     return {position.x, position.y};
 }
 void snakeLeft();
