@@ -5,9 +5,13 @@
 struct Player {
     Vector2 position;
     Vector2 velocity;
-    int boxes; // size of snake
-    const float size{35.0f}; // size of each 'box'
+    const float size{35.0f}; // size of each segment
 };
+
+void snakeUp();
+void snakeLeft();
+void snakeRight();
+void snakeDown();
 
 int main() {
     const int WIDTH{600};
@@ -19,22 +23,38 @@ int main() {
     Player player {
         { WIDTH / 2, HEIGHT / 2 },
         { 300.0f, 300.0f },
-        { 2 },
     };
     
     std::vector<Vector2> body{
         { WIDTH / 2, HEIGHT / 2 },
-        { WIDTH / 2, HEIGHT / 2 + 40.0f }
+        { WIDTH / 2, HEIGHT / 2 + 40.0f },
+        { WIDTH / 2, HEIGHT / 2 + 80.0f }
     };
 
     body.push_back({WIDTH / 2, HEIGHT / 2 + 80.0f});
 
     while (!WindowShouldClose()) {
+        if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP)) {
+
+        }
+
+        if (IsKeyPressed(KEY_A) || IsKeyPressed(KEY_RIGHT)) {
+
+        }
+
+        if (IsKeyPressed(KEY_S) || IsKeyPressed(KEY_DOWN)) {
+
+        }
+
+        if (IsKeyPressed(KEY_D) || IsKeyPressed(KEY_LEFT)) {
+
+        }
+
         BeginDrawing(); 
             ClearBackground(RAYWHITE);
                 for (int i{body.size() - 1}; i >= 0; i--) {
                     if (i == 0) {
-                        DrawRectangleV(body[i], { player.size, player.size }, RED);
+                        DrawRectangleV(body[i], { player.size, player.size }, BLUE);
                     } else {
                         DrawRectangleV(body[i], { player.size, player.size }, BLACK);
                     }
