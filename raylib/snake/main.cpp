@@ -1,105 +1,40 @@
-// this is so broken 😭
-
-#include "raylib.h"
 #include <iostream>
-#include <random>
-
-void applePos(const int WIDTH, const int HEIGHT, Vector2& apple) {
-    static std::random_device rd;
-    static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> x(50, WIDTH - 50);
-    std::uniform_int_distribution<> y(50, HEIGHT - 50);
-    apple.x = (float)x(gen);
-    apple.y = (float)y(gen);
-}
+#include <vector>
+#include "raylib.h"
 
 int main() {
-    const int WIDTH{800}, HEIGHT{800};
-    int playerWidth{35}, playerHeight{35};
-
-    InitWindow(WIDTH, HEIGHT, "Snake Game");
-    SetTargetFPS(144);
+    const int WIDTH{600};
+    const int HEIGHT{600};
+    float currentPos{40.0f};
+    InitWindow(WIDTH, HEIGHT, "Game");
 
     struct Player {
-        Vector2 position{(float)((WIDTH / 2) - (35 / 2)), (float)((HEIGHT / 2) - (35 / 2))};
-        float speed{300.0f};
+        Vector2 position;
+        Vector2 velocity;
+        int boxes; // size of snake
+        const float size{35.0f}; // size of each 'box'
     };
-
-    struct Apple {
-        Vector2 position{};
-        float radius{20.0f};
+    
+    Player player {
+        { WIDTH / 2, HEIGHT / 2 },
+        { 300.0f, 300.0f },
+        { 2 },
     };
-
-    Player player;
-    Apple apple;
-
-    applePos(WIDTH, HEIGHT, apple.position);
-
-    bool up{false}, left{false}, right{true}, down{false};
-    bool gameOver{false};
+    
+    std::vector<Vector2> body{
+        { WIDTH / 2, HEIGHT / 2 },
+        { WIDTH / 2, HEIGHT / 2 + 40.0f }
+    };
 
     while (!WindowShouldClose()) {
-        float dt{GetFrameTime()};
-
-        if (!gameOver) {
-            if (IsKeyPressed(KEY_W) && !down) {
-                up = true;
-                left = false;
-                right = false;
-                down = false; 
-            }
-
-            if (IsKeyPressed(KEY_A) && !right) {
-                up = false;
-                left = true;
-                right = false;
-                down = false; 
-            }
-
-            if (IsKeyPressed(KEY_D) && !left) {
-                up = false;
-                left = false;
-                right = true;
-                down = false; 
-            }
-
-            if (IsKeyPressed(KEY_S) && !up) {
-                up = false;
-                left = false;
-                right = false;
-                down = true;
-            }
-            
-            if (up) player.position.y -= player.speed * dt;
-            if (left) player.position.x -= player.speed * dt;
-            if (right) player.position.x += player.speed * dt;
-            if (down) player.position.y += player.speed * dt;
-
-            Rectangle playerRec{player.position.x, player.position.y, (float)playerWidth, (float)playerHeight};
-
-            if (CheckCollisionCircleRec(apple.position, apple.radius, playerRec)) {
-                applePos(WIDTH, HEIGHT, apple.position);
-                if (up || down) {
-                    playerHeight += 15;
+        BeginDrawing(); 
+        ClearBackground(RAYWHITE);
+            for (int i{body.size() - 1}; i >= 0; i--) {
+                if (i == 0) {
+                    DrawRectangleV(body[i], { player.size, player.size }, RED);
+                } else {
+                    DrawRectangleV(body[i], { player.size, player.size }, BLACK);
                 }
-                if (left || right) {
-                    playerWidth += 15;
-                }
-            }
-
-            if (player.position.y < 0 || player.position.y > HEIGHT - playerHeight ||
-                player.position.x < 0 || player.position.x > WIDTH - playerWidth) {
-                gameOver = true;
-            }
-        }
-
-        BeginDrawing();
-            ClearBackground(RAYWHITE);
-            if (!gameOver) {
-                DrawRectangle((int)player.position.x, (int)player.position.y, playerWidth, playerHeight, BLUE);
-                DrawCircleV(apple.position, apple.radius, RED);
-            } else {
-                DrawText("Game Over", (WIDTH / 4) + 50, (HEIGHT / 2) - 50, 50, BLACK);
             }
         EndDrawing();
     }
