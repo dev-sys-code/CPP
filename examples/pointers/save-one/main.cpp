@@ -6,4 +6,6 @@ int main() {
     int x{5};
     int* y{&x};
     takeNum(y);
+
+    return 0;
 }
