@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include <fstream>
 #include <iostream>
 
 struct Player {
@@ -7,9 +8,26 @@ struct Player {
     float speed;
 };
 
+void lose(const int w, const int h, int& s, int& hS) {
+    std::ofstream hScoreW("highscore.txt");
+    std::ifstream hScoreR("highscore.txt");
+    std::string line{};
+
+    while (std::getline(hScoreR, line)) {
+        int num{std::stoi(line)};
+        if (num > s) {
+            hS = s;
+        }
+    }
+    s = 0;
+    DrawText("Game Over!", w / 4 - 25, h / 2 - 25, 50.0f, BLACK);
+    
+}
+
 int main() {
     const int WIDTH{450};
     const int HEIGHT{800};
+    int score{5}, highscore{};
 
     InitWindow(WIDTH, HEIGHT, "Flappy bird");
     SetTargetFPS(144);
@@ -32,12 +50,12 @@ int main() {
 
         if (player.position.y < 0) {
             player.position.y = 0;
-            DrawText("Game Over!", WIDTH / 4 - 25, HEIGHT / 2 - 25, 50.0f, BLACK);
+            lose(WIDTH, HEIGHT, score, highscore);
         }
 
         if (player.position.y > HEIGHT - 50) {
             player.position.y = HEIGHT - 50;
-            DrawText("Game Over!", WIDTH / 4 - 25, HEIGHT / 2 - 25, 50.0f, BLACK);
+            lose(WIDTH, HEIGHT, score, highscore);
         }
 
         BeginDrawing();
