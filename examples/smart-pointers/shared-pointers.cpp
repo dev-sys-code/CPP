@@ -9,5 +9,5 @@ int main() {
         std::cout << numTwo.use_count();
     }
     std::cout << num.use_count();
-    
+    return 0;
 }
