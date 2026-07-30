@@ -12,9 +12,9 @@
 
 `and_eq`
 
-`asm`
+`asm - Allows direct assembly code`
 
-`auto`
+`auto - Letting compiler figure out data type`
 
 `bitand`
 
