@@ -64,17 +64,17 @@
 
 `default - Used in a switch for everything else`
 
-`delete`
+`delete - Delete a raw pointer manually`
 
-`do`
+`do - Do-while a certain condition is true`
 
-`double`
+`double - Data type with decimal points`
 
 `dynamic_cast`
 
-`else`
+`else - Everything not specified in selection`
 
-`enum`
+`enum - Named integral constants`
 
 `explicit`
 
@@ -82,21 +82,21 @@
 
 `extern`
 
-`false`
+`false - When something isn't true`
 
-`float`
+`float - Similar to a double with fewer decimal points`
 
-`for`
+`for - Iteration loop, count controlled`
 
 `friend`
 
-`goto`
+`goto - Jump to a certain point of code`
 
-`if`
+`if - Selection to check if something is true`
 
 `inline`
 
-`int`
+`int - Whole number data type`
 
 `long`
 
