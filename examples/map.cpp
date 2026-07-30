@@ -9,5 +9,5 @@ int main() {
     inventory.insert({"Orange", 8});
 
     std::cout << "Apples: " << inventory["Apples"] << "\n";
-    
+    return 0;
 }
