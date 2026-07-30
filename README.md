@@ -30,19 +30,19 @@
 
 `char - A single character ('A')`
 
-`char8_t`
+`char8_t - Using UTF-8 Processing`
 
-`char16_t`
+`char16_t - Using UTF-16 Processing`
 
-`char32_t`
+`char32_t - Using UTF-32 Processing`
 
-`class`
+`class - Where similar variables / methods get stored`
 
 `compl`
 
 `concept`
 
-`const`
+`const - Data type that cannot change whilst program is running`
 
 `const_cast`
 
