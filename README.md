@@ -177,8 +177,13 @@
 `virtual`
 
 `void`
+
 `volatile`
+
 `wchar_t`
+
 `while`
+
 `xor`
+
 `xor_eq`
