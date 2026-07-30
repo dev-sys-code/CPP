@@ -8,7 +8,7 @@
 
 `alignof`
 
-`and`
+`and - Legacy '&&'`
 
 `and_eq`
 
