@@ -4,21 +4,21 @@
 
 ### **Cheat sheet**
 
-`alignas`
+`alignas - Specifying custom memory alignment`
 
-`alignof`
+`alignof - Getting the memory alignment requirement of a type`
 
-`and - Legacy '&&'`
+`and - Alternative keyword for '&&'`
 
-`and_eq`
+`and_eq - Alternative keyword for '&='`
 
 `asm - Allows direct assembly code`
 
 `auto - Letting compiler figure out data type`
 
-`bitand`
+`bitand - Alternative keyword for bitwise AND '&'`
 
-`bitor`
+`bitor - Alternative keyword for bitwise OR '|'`
 
 `bool - True or False (0 / 1)`
 
@@ -30,160 +30,160 @@
 
 `char - A single character ('A')`
 
-`char8_t - Using UTF-8 Processing`
+`char8_t - UTF-8 character type`
 
-`char16_t - Using UTF-16 Processing`
+`char16_t - UTF-16 character type`
 
-`char32_t - Using UTF-32 Processing`
+`char32_t - UTF-32 character type`
 
-`class - Where similar variables / methods get stored`
+`class - User-defined type (default private access)`
 
-`compl`
+`compl - Alternative keyword for bitwise NOT '~'`
 
-`concept`
+`concept - Defining template constraints (C++20)`
 
-`const - Data type that cannot change whilst program is running`
+`const - Value that cannot change whilst program is running`
 
-`const_cast`
+`const_cast - Adding or stripping const/volatile qualifiers`
 
-`consteval`
+`consteval - Forcing compile-time function evaluation`
 
-`constexpr`
+`constexpr - Expression evaluated at compile time if possible`
 
-`constinit`
+`constinit - Guarantees variable initialized at compile time`
 
-`continue - Continuing in a loop (e.g. skipping over something)`
+`continue - Continuing in a loop (skipping iteration)`
 
-`co_await`
+`co_await - Suspending coroutine until task completes`
 
-`co_return`
+`co_return - Returning final value from coroutine`
 
-`co_yield`
+`co_yield - Yielding value and suspending coroutine`
 
-`decltype`
+`decltype - Inspecting the declared type of an expression`
 
 `default - Used in a switch for everything else`
 
-`delete - Delete a raw pointer manually`
+`delete - Deallocating heap memory created with new`
 
-`do - Do-while a certain condition is true`
+`do - Do-while loop execution`
 
-`double - Data type with decimal points`
+`double - Double-precision decimal number`
 
-`dynamic_cast`
+`dynamic_cast - Safe runtime-checked inheritance casting`
 
 `else - Everything not specified in selection`
 
 `enum - Named integral constants`
 
-`explicit`
+`explicit - Preventing implicit constructor conversions`
 
-`export`
+`export - Used for C++20 module interface units`
 
-`extern`
+`extern - Variable/function defined in another file`
 
-`false - When something isn't true`
+`false - Boolean literal representing zero`
 
-`float - Similar to a double with fewer decimal points`
+`float - Single-precision decimal number`
 
 `for - Iteration loop, count controlled`
 
-`friend`
+`friend - Granting external access to private members`
 
 `goto - Jump to a certain point of code`
 
 `if - Selection to check if something is true`
 
-`inline`
+`inline - Suggesting function inlining / header safety`
 
 `int - Whole number data type`
 
-`long - Long integer than cannot be stored in an int`
+`long - Extended integer data type`
 
-`mutable - `
+`mutable - Modifying member variable inside const method`
 
 `namespace - Organize code into groups`
 
-`new - Making a new raw pointer`
+`new - Allocating dynamic memory on the heap`
 
-`noexcept`
+`noexcept - Specifying a function won't throw exceptions`
 
-`not - Checking if data is opposite to what it is`
+`not - Alternative keyword for '!'`
 
-`not_eq`
+`not_eq - Alternative keyword for '!='`
 
 `nullptr - Pointer that is null (nothing)`
 
-`operator`
+`operator - Overloading custom operators`
 
-`or - Legacy version of '||'`
+`or - Alternative keyword for '||'`
 
-`or_eq`
+`or_eq - Alternative keyword for '|='`
 
-`private`
+`private - Access specifier only visible within class`
 
-`protected`
+`protected - Access specifier visible to class and derived`
 
-`public`
+`public - Access specifier visible from anywhere`
 
-`register`
+`register - Deprecated hint for CPU register storage`
 
-`reinterpret_cast`
+`reinterpret_cast - Raw bit reinterpretation (huge for OS dev)`
 
-`requires`
+`requires - Specifying template constraints with concepts`
 
-`return`
+`return - Exiting function and passing back a value`
 
-`short`
+`short - Small integer data type (at least 16 bits)`
 
-`signed`
+`signed - Integer type that allows negative values`
 
-`sizeof`
+`sizeof - Returns size of type or object in bytes`
 
-`static`
+`static - Persists state or limits scope to file`
 
-`static_assert`
+`static_assert - Compile-time condition checking`
 
-`static_cast`
+`static_cast - Checked compile-time conversion`
 
-`struct`
+`struct - User-defined type (default public access)`
 
-`switch`
+`switch - Selection based on integer match`
 
-`template`
+`template - Parameterizing functions or classes`
 
-`this`
+`this - Pointer to current object instance`
 
-`thread_local`
+`thread_local - Memory uniquely allocated per thread`
 
-`throw`
+`throw - Raising an exception`
 
-`true`
+`true - Boolean literal representing non-zero`
 
-`try`
+`try - Block to monitor for exceptions`
 
-`typedef`
+`typedef - Creating legacy type aliases`
 
-`typeid`
+`typeid - Querying type metadata at runtime`
 
-`typername`
+`typename - Declaring template parameter or resolving type`
 
-`union`
+`union - Memory structure sharing same address`
 
-`unsigned`
+`unsigned - Integer that can only be positive`
 
-`using`
+`using - Modern type alias or namespace import`
 
-`virtual`
+`virtual - Allowing function override in derived class`
 
-`void`
+`void - Data type that returns nothing / generic pointer`
 
-`volatile`
+`volatile - Prevents optimization on hardware registers`
 
-`wchar_t`
+`wchar_t - Wide character type for native sets`
 
-`while`
+`while - Condition-controlled loop`
 
-`xor`
+`xor - Alternative keyword for bitwise XOR '^'`
 
-`xor_eq`
+`xor_eq - Alternative keyword for '^='`
