@@ -20,7 +20,7 @@
 
 `bitor`
 
-`bool`
+`bool - True or False (0 / 1)`
 
 `break`
 
