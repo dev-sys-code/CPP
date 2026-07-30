@@ -30,3 +30,27 @@ constexpr
 
 constinit
 continue
+co_await
+co_return
+co_yield
+decltype
+default
+delete
+do
+double
+dynamic_cast
+else
+enum
+explicit
+export
+extern
+false
+float
+for
+friend
+goto
+if
+inline
+
+int
+long
