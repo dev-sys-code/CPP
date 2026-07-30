@@ -52,7 +52,7 @@
 
 `constinit`
 
-`continue`
+`continue - Continuing in a loop (e.g. skipping over something)`
 
 `co_await`
 
@@ -62,7 +62,7 @@
 
 `decltype`
 
-`default`
+`default - Used in a switch for everything else`
 
 `delete`
 
