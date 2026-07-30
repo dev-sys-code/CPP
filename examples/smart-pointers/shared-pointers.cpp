@@ -3,11 +3,12 @@
 
 int main() {
     auto num{std::make_shared<int>(42)};
-    std::cout << num.use_count();
+    std::cout << "Number before scope: " <<  num.use_count() << "\n";
     {
         auto numTwo{num};
-        std::cout << numTwo.use_count();
+        std::cout << "Number in scope: " << numTwo.use_count() << "\n";
     }
-    std::cout << num.use_count();
-    return 0;
+    
+    std::cout << "Number after scope: " << num.use_count() << "\n";
+    
 }
