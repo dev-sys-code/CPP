@@ -22,13 +22,13 @@
 
 `bool - True or False (0 / 1)`
 
-`break`
+`break - Breaking out of a loop`
 
-`case`
+`case - Used in 'switch'`
 
-`catch`
+`catch - Catching an error you or the compiler thrown`
 
-`char`
+`char - A single character ('A')`
 
 `char8_t`
 
