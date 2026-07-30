@@ -98,25 +98,25 @@
 
 `int - Whole number data type`
 
-`long`
+`long - Long integer than cannot be stored in an int`
 
-`mutable`
+`mutable - `
 
-`namespace`
+`namespace - Organize code into groups`
 
-`new`
+`new - Making a new raw pointer`
 
 `noexcept`
 
-`not`
+`not - Checking if data is opposite to what it is`
 
 `not_eq`
 
-`nullptr`
+`nullptr - Pointer that is null (nothing)`
 
 `operator`
 
-`or`
+`or - Legacy version of '||'`
 
 `or_eq`
 
