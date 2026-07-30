@@ -67,4 +67,13 @@ or_eq
 private
 protected
 public
+register
+reinterpret_cast
+requires
+return
+short
+signed
+sizeof
+static
+static_assert 
 
