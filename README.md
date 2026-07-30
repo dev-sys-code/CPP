@@ -54,3 +54,17 @@ inline
 
 int
 long
+mutable
+namespace
+new
+noexcept
+not
+not_eq
+nullptr
+operator
+or
+or_eq
+private
+protected
+public
+
