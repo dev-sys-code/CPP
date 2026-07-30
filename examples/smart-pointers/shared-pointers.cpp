@@ -8,7 +8,6 @@ int main() {
         auto numTwo{num};
         std::cout << "Number in scope: " << numTwo.use_count() << "\n";
     }
-    
     std::cout << "Number after scope: " << num.use_count() << "\n";
-    
+    return 0;
 }
