@@ -14,26 +14,26 @@ struct Enemy {
     Vector2 position;
     Vector2 velocity;
     Vector2 size;
-    int amount;
 };
 
 int main() {
-    int WIDTH{600};
-    int HEIGHT{600};
+    const int WIDTH{600};
+    const int HEIGHT{600};
+
+    int score{};
 
     InitWindow(WIDTH, HEIGHT, "Car game");\
 
     Player player {
         { ((float)HEIGHT / 2.0f) - 17.5f, ((float)WIDTH / 2.0f) - 17.5f },
-        { 100.0f, 200.0f },
+        { 100.0f, 300.0f },
         { 50.0f, 85.0f }
     };
 
     Enemy enemy {
         { (float)random(WIDTH), -85.0f },
-        { 100.0f, 200.0f },
+        { 100.0f, 350.0f },
         { 50.0f, 85.0f },
-        { 10 }
     };
 
     while (!WindowShouldClose()) {
