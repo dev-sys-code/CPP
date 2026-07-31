@@ -50,12 +50,13 @@ int main() {
         enemy.position.y += enemy.velocity.y * GetFrameTime();
         if (enemy.position.y > HEIGHT) {
             enemy.position.x = random(WIDTH);
-            enemy.position.y = -85.0f;
+            enemy.position.y = -200.0f; // not -85.0f because it looks odd
         }
         BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawRectangleV(player.position, player.size, BLUE);
             DrawRectangleV(enemy.position, enemy.size, RED);
+            DrawText(TextFormat("Score: %i", score), 10.0f, 10.0f, 20.0f, BLACK);
         EndDrawing();
     }
 
