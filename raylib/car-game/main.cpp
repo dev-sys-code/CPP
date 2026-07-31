@@ -21,6 +21,8 @@ int main() {
     int WIDTH{600};
     int HEIGHT{600};
 
+    InitWindow(WIDTH, HEIGHT, "Car game");\
+
     Player player {
         { ((float)HEIGHT / 2.0f) - 17.5f, ((float)WIDTH / 2.0f) - 17.5f },
         { 100.0f, 200.0f },
@@ -28,13 +30,11 @@ int main() {
     };
 
     Enemy enemy {
-        { (float)random(WIDTH), (float)random(HEIGHT) },
+        { (float)random(WIDTH), -85.0f },
         { 100.0f, 200.0f },
         { 50.0f, 85.0f },
         { 10 }
     };
-
-    InitWindow(WIDTH, HEIGHT, "Car game");
 
     while (!WindowShouldClose()) {
         if (IsKeyDown(KEY_W)) player.position.y -= player.velocity.y * GetFrameTime();
@@ -48,7 +48,10 @@ int main() {
         if (player.position.x > WIDTH - player.size.x) player.position.x = WIDTH - player.size.x;
         
         enemy.position.y += enemy.velocity.y * GetFrameTime();
-
+        if (enemy.position.y > HEIGHT) {
+            enemy.position.x = random(WIDTH);
+            enemy.position.y = -85.0f;
+        }
         BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawRectangleV(player.position, player.size, BLUE);
