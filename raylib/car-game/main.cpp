@@ -49,6 +49,7 @@ int main() {
         
         enemy.position.y += enemy.velocity.y * GetFrameTime();
         if (enemy.position.y > HEIGHT) {
+            score ++;
             enemy.position.x = random(WIDTH);
             enemy.position.y = -200.0f; // not -85.0f because it looks odd
         }
