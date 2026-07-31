@@ -23,13 +23,13 @@ int main() {
 
     Player player {
         { ((float)HEIGHT / 2.0f) - 17.5f, ((float)WIDTH / 2.0f) - 17.5f },
-        { 400.0f, 400.0f },
+        { 100.0f, 200.0f },
         { 50.0f, 85.0f }
     };
 
     Enemy enemy {
-        { random(WIDTH), random(HEIGHT) },
-        { 400.0f, 400.0f },
+        { (float)random(WIDTH), (float)random(HEIGHT) },
+        { 100.0f, 200.0f },
         { 50.0f, 85.0f },
         { 10 }
     };
@@ -47,9 +47,12 @@ int main() {
         if (player.position.x < 0) player.position.x = 0;
         if (player.position.x > WIDTH - player.size.x) player.position.x = WIDTH - player.size.x;
         
+        enemy.position.y += enemy.velocity.y * GetFrameTime();
+
         BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawRectangleV(player.position, player.size, BLUE);
+            DrawRectangleV(enemy.position, enemy.size, RED);
         EndDrawing();
     }
 
