@@ -22,7 +22,7 @@ int main() {
 
     int score{};
 
-    InitWindow(WIDTH, HEIGHT, "Car game");\
+    InitWindow(WIDTH, HEIGHT, "Car game");
 
     Player player {
         { ((float)HEIGHT / 2.0f) - 17.5f, ((float)WIDTH / 2.0f) - 17.5f },
