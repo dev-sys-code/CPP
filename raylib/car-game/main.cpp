@@ -14,6 +14,7 @@ struct Enemy {
     Vector2 position;
     Vector2 velocity;
     Vector2 size;
+    int amount;
 };
 
 int main() {
@@ -27,9 +28,10 @@ int main() {
     };
 
     Enemy enemy {
-        {  },
+        { random(WIDTH), random(HEIGHT) },
         { 400.0f, 400.0f },
-        { 50.0f, 85.0f }
+        { 50.0f, 85.0f },
+        { 10 }
     };
 
     InitWindow(WIDTH, HEIGHT, "Car game");
