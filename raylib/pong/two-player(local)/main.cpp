@@ -24,13 +24,13 @@ int main() {
     InitWindow(WIDTH, HEIGHT, "Pong Game");
 
     Entity playerOne {
-        { 100, HEIGHT / 2 - 50 },
+        { 50, HEIGHT / 2 - 50 },
         { 400.0f, 400.0f },
         { 20.0f, 100.0f }
     };
 
     Entity playerTwo {
-        { WIDTH - 100, HEIGHT / 2 - 50 },
+        { WIDTH - 50, HEIGHT / 2 - 50 },
         { 400.0f, 400.0f },
         { 20.0f, 100.0f }
     };
@@ -52,6 +52,13 @@ int main() {
         if (playerTwo.position.y < 0) playerTwo.position.y = 0;
         if (playerTwo.position.y > HEIGHT - playerTwo.size.y) playerTwo.position.y = HEIGHT - playerTwo.size.y;
 
+        if (ball.position.y < 0) ball.position.y *= -1.0f;
+        if (ball.position.y > HEIGHT - ball.radius) ball.position.y *= -1.0f;
+        if (ball.position.x < 0) ball.position.x*= -1.0f;
+        if (ball.position.x > WIDTH - ball.radius) ball.position.x *= -1.0f;
+
+        ball.position.y -= ball.velocity.y * GetFrameTime();
+        ball.position.x -= ball.velocity.x * GetFrameTime();
         BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawRectangleV(playerOne.position, playerOne.size, BLACK);
