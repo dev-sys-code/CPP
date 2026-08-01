@@ -54,7 +54,7 @@ int main() {
 
         if (ball.position.y < 0) ball.position.y *= -1.0f;
         if (ball.position.y > HEIGHT - ball.radius) ball.position.y *= -1.0f;
-        if (ball.position.x < 0) ball.position.x*= -1.0f;
+        if (ball.position.x < 0) ball.position.x *= -1.0f;
         if (ball.position.x > WIDTH - ball.radius) ball.position.x *= -1.0f;
 
         ball.position.y -= ball.velocity.y * GetFrameTime();
