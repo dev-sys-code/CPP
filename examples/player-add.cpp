@@ -17,7 +17,9 @@ int main() {
         getline(cin, temp);
         names.push_back(temp);
     } while (temp != "0");
+    
     names.pop_back();
+    
     {
         int j{};
         for (auto i : names) {
