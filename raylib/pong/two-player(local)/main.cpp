@@ -47,6 +47,9 @@ int main() {
         if (IsKeyDown(KEY_I)) playerTwo.position.y -= playerTwo.velocity.y * GetFrameTime();
         if (IsKeyDown(KEY_K)) playerTwo.position.y += playerTwo.velocity.y * GetFrameTime();
 
+        if (playerOne.position.y < 0) playerOne.position.y = 0;
+        if (playerOne.position.y > HEIGHT - playerOne.size.y) playerOne.position.y = HEIGHT - playerOne.size.y;
+
         BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawRectangleV(playerOne.position, playerOne.size, BLACK);
