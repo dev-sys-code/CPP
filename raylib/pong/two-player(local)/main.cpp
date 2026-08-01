@@ -36,9 +36,9 @@ int main() {
     };
 
     Ball ball {
-        { WIDTH / 2 - 20.0f, HEIGHT / 2 - 20.0f },
+        { WIDTH / 2, HEIGHT / 2 },
         { 600.0f, 600.0f },
-        { 40.0f }
+        { 15.0f }
     };
 
     while (!WindowShouldClose()) {
