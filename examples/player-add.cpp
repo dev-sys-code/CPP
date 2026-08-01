@@ -17,11 +17,11 @@ int main() {
         getline(cin, temp);
         names.push_back(temp);
     } while (temp != "0");
-    
+    names.pop_back();
     {
         int j{};
         for (auto i : names) {
-            cout << j << ": " << i << "\n";
+            cout << j + 1 << ": " << i << "\n";
             j++;
         }
     }
