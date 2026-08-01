@@ -10,9 +10,16 @@ struct Entity {
     Vector2 size;
 };
 
+struct Ball {
+    Vector2 position;
+    Vector2 velocity;
+    float radius;
+};
+
 int main() {
-    int WIDTH{800};
-    int HEIGHT{450};
+    const int WIDTH{800}, HEIGHT{450};
+
+    int p1Score{}, p2Score{};
 
     InitWindow(WIDTH, HEIGHT, "Pong Game");
 
@@ -28,14 +35,23 @@ int main() {
         { 20.0f, 100.0f }
     };
 
-    Entity ball {
+    Ball ball {
         { WIDTH / 2 - 20.0f, HEIGHT / 2 - 20.0f },
         { 600.0f, 600.0f },
-        { 40.0f, 40.0f }
+        { 40.0f }
     };
 
     while (!WindowShouldClose()) {
+        if (IsKeyDown(KEY_W)) playerOne.position.y -= playerOne.velocity.y * GetFrameTime();
+        if (IsKeyDown(KEY_S)) playerOne.position.y += playerOne.velocity.y * GetFrameTime();
+        if (IsKeyDown(KEY_I)) playerTwo.position.y -= playerTwo.velocity.y * GetFrameTime();
+        if (IsKeyDown(KEY_K)) playerTwo.position.y += playerTwo.velocity.y * GetFrameTime();
+
         BeginDrawing();
+            ClearBackground(RAYWHITE);
+            DrawRectangleV(playerOne.position, playerOne.size, BLACK);
+            DrawRectangleV(playerTwo.position, playerTwo.size, BLACK);
+            DrawCircleV(ball.position, ball.radius, BLACK);
         EndDrawing();
     }
     return 0;
