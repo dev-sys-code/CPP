@@ -49,6 +49,8 @@ int main() {
 
         if (playerOne.position.y < 0) playerOne.position.y = 0;
         if (playerOne.position.y > HEIGHT - playerOne.size.y) playerOne.position.y = HEIGHT - playerOne.size.y;
+        if (playerTwo.position.y < 0) playerTwo.position.y = 0;
+        if (playerTwo.position.y > HEIGHT - playerTwo.size.y) playerTwo.position.y = HEIGHT - playerTwo.size.y;
 
         BeginDrawing();
             ClearBackground(RAYWHITE);
