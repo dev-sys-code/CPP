@@ -30,7 +30,7 @@ int main() {
     };
 
     Entity playerTwo {
-        { WIDTH - 50, HEIGHT / 2 - 50 },
+        { WIDTH - 75, HEIGHT / 2 - 50 },
         { 500.0f, 500.0f },
         { 20.0f, 100.0f }
     };
