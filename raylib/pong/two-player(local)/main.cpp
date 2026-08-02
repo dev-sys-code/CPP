@@ -53,9 +53,9 @@ int main() {
         if (playerTwo.position.y > HEIGHT - playerTwo.size.y) playerTwo.position.y = HEIGHT - playerTwo.size.y;
 
         if (ball.position.y <= 0) ball.velocity.y *= -1.0f;
-        if (ball.position.y > HEIGHT) ball.velocity.y  *= -1.0f;
+        if (ball.position.y >= HEIGHT) ball.velocity.y  *= -1.0f;
         if (ball.position.x <= 0) ball.velocity.x *= -1.0f;
-        if (ball.position.x > WIDTH) ball.velocity.x *= -1.0f;
+        if (ball.position.x >= WIDTH) ball.velocity.x *= -1.0f;
 
         ball.position.y -= ball.velocity.y * GetFrameTime();
         ball.position.x -= ball.velocity.x * GetFrameTime();
