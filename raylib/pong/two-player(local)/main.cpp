@@ -3,6 +3,7 @@
 */
 
 #include "raylib.h"
+#include <iostream>
 
 struct Entity {
     Vector2 position;
@@ -16,15 +17,24 @@ struct Ball {
     float radius;
 };
 
+void controls(int& p1u, int& p1d, int& p2u, int& p2d) {
+    std::cout << "Player 1 UP: \n>_ ";
+    p1u = GetKeyPressed();
+    std::cout << "Player 1 DOWN: \n>_ ";
+    p1d = GetKeyPressed();
+    std::cout << "Player 2 UP: \n>_ ";
+    p2u = GetKeyPressed();
+    std::cout << "Player 2 DOWN: \n>_ ";
+    p2d = GetKeyPressed();
+}
+
 int main() {
     const int WIDTH{800}, HEIGHT{450};
 
     int p1Score{}, p2Score{};
     
-    int p1KeyUp{GetKeyPressed()};
-    int p1KeyDown{GetKeyPressed()};
-    int p2KeyUp{GetKeyPressed()};
-    int p2KeyDown{GetKeyPressed()};
+    int p1up{}, p1down{}, p2up{}, p2down{};
+    controls(p1up, p1down, p2up, p2down);
 
     InitWindow(WIDTH, HEIGHT, "Pong Game");
 
@@ -47,10 +57,10 @@ int main() {
     };
 
     while (!WindowShouldClose()) {
-        if (IsKeyDown(p1KeyUp)) playerOne.position.y -= playerOne.velocity.y * GetFrameTime();
-        if (IsKeyDown(p1KeyDown)) playerOne.position.y += playerOne.velocity.y * GetFrameTime();
-        if (IsKeyDown(p2KeyUp)) playerTwo.position.y -= playerTwo.velocity.y * GetFrameTime();
-        if (IsKeyDown(p2KeyDown)) playerTwo.position.y += playerTwo.velocity.y * GetFrameTime();
+        if (IsKeyDown(p1up)) playerOne.position.y -= playerOne.velocity.y * GetFrameTime();
+        if (IsKeyDown(p1down)) playerOne.position.y += playerOne.velocity.y * GetFrameTime();
+        if (IsKeyDown(p2up)) playerTwo.position.y -= playerTwo.velocity.y * GetFrameTime();
+        if (IsKeyDown(p2down)) playerTwo.position.y += playerTwo.velocity.y * GetFrameTime();
 
         if (playerOne.position.y < 0) playerOne.position.y = 0;
         if (playerOne.position.y > HEIGHT - playerOne.size.y) playerOne.position.y = HEIGHT - playerOne.size.y;
