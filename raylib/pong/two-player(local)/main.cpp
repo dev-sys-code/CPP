@@ -20,6 +20,11 @@ int main() {
     const int WIDTH{800}, HEIGHT{450};
 
     int p1Score{}, p2Score{};
+    
+    int p1KeyUp{GetKeyPressed()};
+    int p1KeyDown{GetKeyPressed()};
+    int p2KeyUp{GetKeyPressed()};
+    int p2KeyDown{GetKeyPressed()};
 
     InitWindow(WIDTH, HEIGHT, "Pong Game");
 
@@ -42,10 +47,10 @@ int main() {
     };
 
     while (!WindowShouldClose()) {
-        if (IsKeyDown(KEY_W)) playerOne.position.y -= playerOne.velocity.y * GetFrameTime();
-        if (IsKeyDown(KEY_S)) playerOne.position.y += playerOne.velocity.y * GetFrameTime();
-        if (IsKeyDown(KEY_I)) playerTwo.position.y -= playerTwo.velocity.y * GetFrameTime();
-        if (IsKeyDown(KEY_K)) playerTwo.position.y += playerTwo.velocity.y * GetFrameTime();
+        if (IsKeyDown(p1KeyUp)) playerOne.position.y -= playerOne.velocity.y * GetFrameTime();
+        if (IsKeyDown(p1KeyDown)) playerOne.position.y += playerOne.velocity.y * GetFrameTime();
+        if (IsKeyDown(p2KeyUp)) playerTwo.position.y -= playerTwo.velocity.y * GetFrameTime();
+        if (IsKeyDown(p2KeyDown)) playerTwo.position.y += playerTwo.velocity.y * GetFrameTime();
 
         if (playerOne.position.y < 0) playerOne.position.y = 0;
         if (playerOne.position.y > HEIGHT - playerOne.size.y) playerOne.position.y = HEIGHT - playerOne.size.y;
