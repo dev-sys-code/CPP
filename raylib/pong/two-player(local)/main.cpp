@@ -25,19 +25,19 @@ int main() {
 
     Entity playerOne {
         { 50, HEIGHT / 2 - 50 },
-        { 400.0f, 400.0f },
+        { 500.0f, 500.0f },
         { 20.0f, 100.0f }
     };
 
     Entity playerTwo {
         { WIDTH - 50, HEIGHT / 2 - 50 },
-        { 400.0f, 400.0f },
+        { 500.0f, 500.0f },
         { 20.0f, 100.0f }
     };
 
     Ball ball {
         { WIDTH / 2, HEIGHT / 2 },
-        { 600.0f, 600.0f },
+        { 400.0f, 400.0f },
         { 15.0f }
     };
 
@@ -52,19 +52,35 @@ int main() {
         if (playerTwo.position.y < 0) playerTwo.position.y = 0;
         if (playerTwo.position.y > HEIGHT - playerTwo.size.y) playerTwo.position.y = HEIGHT - playerTwo.size.y;
 
-        if (ball.position.y < 0) ball.velocity.y *= -1.0f;
+        if (ball.position.y <= 0) ball.velocity.y *= -1.0f;
         if (ball.position.y > HEIGHT) ball.velocity.y  *= -1.0f;
-        if (ball.position.x < 0) ball.velocity.x *= -1.0f;
+        if (ball.position.x <= 0) ball.velocity.x *= -1.0f;
         if (ball.position.x > WIDTH) ball.velocity.x *= -1.0f;
 
         ball.position.y -= ball.velocity.y * GetFrameTime();
         ball.position.x -= ball.velocity.x * GetFrameTime();
+
+        Rectangle playerOneRect = {playerOne.position.x, playerOne.position.y, playerOne.size.x, playerOne.size.y};
+        Rectangle playerTwoRect = {playerTwo.position.x, playerTwo.position.y, playerTwo.size.x, playerTwo.size.y};
+
+        if (CheckCollisionCircleRec(ball.position, ball.radius, playerOneRect) && ball.velocity.x > 0) {
+            ball.velocity.x *= -1.0f;
+            p1Score ++;
+        }
+
+        if (CheckCollisionCircleRec(ball.position, ball.radius, playerTwoRect) && ball.velocity.x < 0) {
+            ball.velocity.x *= -1.0f;
+            p2Score ++;
+        }
         
+
         BeginDrawing();
             ClearBackground(RAYWHITE);
             DrawRectangleV(playerOne.position, playerOne.size, BLACK);
             DrawRectangleV(playerTwo.position, playerTwo.size, BLACK);
             DrawCircleV(ball.position, ball.radius, BLACK);
+            DrawText(TextFormat("Score: %i", p1Score), 100, 50, 30, BLACK);
+            DrawText(TextFormat("Score: %i", p2Score), WIDTH - 250, 50, 30,BLACK);
         EndDrawing();
     }
     return 0;
