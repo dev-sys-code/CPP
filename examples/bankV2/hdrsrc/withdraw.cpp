@@ -3,6 +3,7 @@
 
 void buy(double& money, double& card, const double amount) {
     card -= amount;
+    money += amount;
     std::cout << "Thanks for using us!\n";
 }
 
@@ -16,11 +17,17 @@ void withdraw(double& money, double& card, const double amount) {
             std::cout << "£" << amount << " is over 50% of your balance, are you sure? (1 - yes / 0 - no)";
             std::cin >> choice;
             if (choice == 0) {
-
+                std::cout << "Nothing has been taken out\n";
             } else {
                 buy(money, card, amount);
             }
+            break;
         }
     }
+    else {
+        buy(money, card, amount);
+    }
 }
+
+
 
