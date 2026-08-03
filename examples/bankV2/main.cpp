@@ -2,9 +2,7 @@
 #include "withdraw.hpp"
 #include "deposit.hpp"
 
-void error(const std::string msg) {
-    std::cout << "[Error] " << msg << "\n";
-}
+void error(const std::string msg) { std::cout << "[Error] " << msg << "\n"; }
 
 int main() {
     int choice{}, temp{};
@@ -12,7 +10,7 @@ int main() {
 
     while (true) {
         std::cout 
-            << "=\n====== Bank =======\n"
+            << "\n======= Bank =======\n"
             << "(1) Withdraw\n"
             << "(2) Deposit\n"
             << "(3) View Balance\n\n"
