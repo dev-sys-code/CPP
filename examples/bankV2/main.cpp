@@ -2,6 +2,7 @@
 
 int main() {
     int choice{};
+    double money{}, card{};
 
     while (true) {
         std::cout 
@@ -9,7 +10,9 @@ int main() {
         << "(2) Deposit\n"
         << "(3) View Balance\n\n"
         << "(0) Exit\n>_";
+
         std::cin >> choice;
+        
         switch (choice) {
             case 0:
             case 1: 
