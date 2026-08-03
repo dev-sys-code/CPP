@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./headers/withdraw.hpp"
+#include "withdraw.hpp"
 
 void buy(double& money, double& card, const double amount) {
     card -= amount;
@@ -15,13 +15,11 @@ void withdraw(double& money, double& card, const double amount) {
         while (true) {
             std::cout << "£" << amount << " is over 50% of your balance, are you sure? (1 - yes / 0 - no)";
             std::cin >> choice;
-            switch (choice) {
-                case 0: break;
-                case 1:
-                    buy(money, card, amount);
-                    break; 
+            if (choice == 0) {
+
+            } else {
+                buy(money, card, amount);
             }
-            buy(money, card, amount);
         }
     }
 }
