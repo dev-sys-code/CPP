@@ -19,7 +19,6 @@ int main() {
 
         std::cin >> choice;
 
-
         switch (choice) {
             case 0: return 0;
             case 1: withdraw(money, card, amount);
