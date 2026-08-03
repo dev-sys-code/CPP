@@ -19,14 +19,15 @@ int main() {
 
         std::cin >> choice;
 
+
         switch (choice) {
             case 0: return 0;
-            case 1: withdraw(money, card, amount);
+            case 1: withdraw(money, card, amount); break;
             case 2:
             case 3: 
             default: error("Not in range");
         }
-        
+
         std::cout << "£";
         std::cin >> amount;
 
