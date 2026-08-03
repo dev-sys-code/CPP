@@ -12,8 +12,8 @@ int main() {
 
     while (true) {
         std::cout 
-            << "======= Bank ======="
-            << "\n(1) Withdraw\n"
+            << "=\n====== Bank =======\n"
+            << "(1) Withdraw\n"
             << "(2) Deposit\n"
             << "(3) View Balance\n\n"
             << "(0) Exit\n>_";
@@ -31,7 +31,7 @@ int main() {
             case 2:
 
             case 3: 
-                std::cout << "Cash: £" << money << "\nCard: £" << card; 
+                std::cout << "\n\nCash: £" << money << " | Card: £" << card << "\n"; 
                 continue;
 
             default: error("Not in range"); break;
