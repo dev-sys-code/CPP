@@ -22,14 +22,20 @@ int main() {
 
         switch (choice) {
             case 0: return 0;
-            case 1: withdraw(money, card, amount); break;
-            case 2:
-            case 3: 
-            default: error("Not in range");
-        }
+            case 1: 
+                std::cout << "£";
+                std::cin >> amount;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-        std::cout << "£";
-        std::cin >> amount;
+                withdraw(money, card, amount); break;
+
+            case 2:
+
+            case 3: 
+                std::cout << "Cash: £" << money << "\nCard: £" << card; continue;
+
+            default: error("Not in range"); break;
+        }
     }
     return 0;
 }
