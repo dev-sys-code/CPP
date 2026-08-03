@@ -14,10 +14,10 @@ void withdraw(double& money, double& card, const double amount) {
         std::cout << "Insufficient balance: £" << card << " available\n";
     } else if (amount > card / 2) {
         while (true) {
-            std::cout << "£" << amount << " is over 50% of your balance, are you sure? (1 - yes / 0 - no)";
+            std::cout << "£" << amount << " is over 50% of your balance, are you sure? (1 - yes / 0 - no\n";
             std::cin >> choice;
             if (choice == 0) {
-                std::cout << "Nothing has been taken out\n";
+                std::cout << "\nNothing has been taken out\n";
             } else {
                 buy(money, card, amount);
             }
