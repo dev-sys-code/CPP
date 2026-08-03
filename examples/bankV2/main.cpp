@@ -7,15 +7,15 @@ void error(const std::string msg) {
 }
 
 int main() {
-    int choice{};
+    int choice{}, temp{};
     double money{50}, card{50}, amount{};
 
     while (true) {
         std::cout 
-        << "\n\n(1) Withdraw\n"
-        << "(2) Deposit\n"
-        << "(3) View Balance\n\n"
-        << "(0) Exit\n>_";
+            << "\n\n(1) Withdraw\n"
+            << "(2) Deposit\n"
+            << "(3) View Balance\n\n"
+            << "(0) Exit\n>_";
 
         std::cin >> choice;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -26,13 +26,12 @@ int main() {
                 std::cout << "£";
                 std::cin >> amount;
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
                 withdraw(money, card, amount); break;
-
             case 2:
 
             case 3: 
-                std::cout << "Cash: £" << money << "\nCard: £" << card; continue;
+                std::cout << "Cash: £" << money << "\nCard: £" << card; 
+                continue;
 
             default: error("Not in range"); break;
         }
