@@ -28,6 +28,3 @@ void withdraw(double& money, double& card, const double amount) {
         buy(money, card, amount);
     }
 }
-
-
-
