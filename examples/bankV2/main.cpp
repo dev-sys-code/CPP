@@ -19,8 +19,6 @@ int main() {
 
         std::cin >> choice;
 
-        std::cout << "£";
-        std::cin >> amount;
 
         switch (choice) {
             case 0: return 0;
@@ -29,6 +27,10 @@ int main() {
             case 3: 
             default: error("Not in range");
         }
+        
+        std::cout << "£";
+        std::cin >> amount;
+
     }
     return 0;
 }
