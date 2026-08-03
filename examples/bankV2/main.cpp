@@ -12,6 +12,7 @@ int main() {
 
     while (true) {
         std::cout 
+            << "======= Bank ======="
             << "\n(1) Withdraw\n"
             << "(2) Deposit\n"
             << "(3) View Balance\n\n"
