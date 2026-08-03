@@ -12,7 +12,7 @@ int main() {
 
     while (true) {
         std::cout 
-        << "(1) Withdraw\n"
+        << "\n\n(1) Withdraw\n"
         << "(2) Deposit\n"
         << "(3) View Balance\n\n"
         << "(0) Exit\n>_";
