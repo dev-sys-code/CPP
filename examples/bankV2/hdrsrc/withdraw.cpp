@@ -17,7 +17,7 @@ void withdraw(double& money, double& card, const double amount) {
             std::cout << "£" << amount << " is over 50% of your balance, are you sure? (1 - yes / 0 - no\n";
             std::cin >> choice;
             if (choice == 0) {
-                std::cout << "\nNothing has been taken out\n";
+                std::cout << "\nYou have not been charged";
             } else {
                 buy(money, card, amount);
             }
