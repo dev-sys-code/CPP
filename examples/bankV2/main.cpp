@@ -1,4 +1,6 @@
 #include <iostream>
+#include "withdraw.hpp"
+#include "deposit.hpp"
 
 void error(const std::string msg) {
     std::cout << "[Error] " << msg << "\n";
@@ -6,7 +8,7 @@ void error(const std::string msg) {
 
 int main() {
     int choice{};
-    double money{}, card{};
+    double money{}, card{}, amount{};
 
     while (true) {
         std::cout 
@@ -17,12 +19,16 @@ int main() {
 
         std::cin >> choice;
 
+        std::cout << "£";
+        std::cin >> amount;
+
         switch (choice) {
-            case 0:
-            case 1: 
+            case 0: return 0;
+            case 1: withdraw(money, card, amount);
             case 2:
             case 3: 
             default: error("Not in range");
         }
     }
+    return 0;
 }
