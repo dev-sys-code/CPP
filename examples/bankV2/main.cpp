@@ -8,7 +8,7 @@ void error(const std::string msg) {
 
 int main() {
     int choice{};
-    double money{}, card{}, amount{};
+    double money{50}, card{50}, amount{};
 
     while (true) {
         std::cout 
@@ -18,7 +18,7 @@ int main() {
         << "(0) Exit\n>_";
 
         std::cin >> choice;
-
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         switch (choice) {
             case 0: return 0;
@@ -30,7 +30,6 @@ int main() {
 
         std::cout << "£";
         std::cin >> amount;
-
     }
     return 0;
 }
