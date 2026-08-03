@@ -1,5 +1,9 @@
 #include <iostream>
 
+void error(const std::string msg) {
+    std::cout << "[Error] " << msg << "\n";
+}
+
 int main() {
     int choice{};
     double money{}, card{};
@@ -12,13 +16,13 @@ int main() {
         << "(0) Exit\n>_";
 
         std::cin >> choice;
-        
+
         switch (choice) {
             case 0:
             case 1: 
             case 2:
             case 3: 
-            default:
+            default: error("Not in range");
         }
     }
 }
