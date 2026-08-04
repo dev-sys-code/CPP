@@ -1,10 +1,12 @@
 #include <iostream>
 #include <iomanip>
+#include <vector>
 #include "withdraw.hpp"
 #include "deposit.hpp"
 
 class Bank {
 private:
+    std::string name{"Untitled Bank"};
     double money{50};
     double card{50};
     double amount{};
@@ -63,6 +65,11 @@ int main() {
             case 1: bankOne.withdrawClass(); break;
             case 2: bankOne.depositClass(); break;
             case 3: bankOne.balance(); break;
+            case 4: break;
+            case 5: break;
+            case 6: break;
+            case 7: break;
+            default: error("Out of range (0-7 Only)");
         }
     }
     return 0;
