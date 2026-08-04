@@ -50,6 +50,13 @@ int main() {
 
         std::cin >> choice;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        switch (choice) {
+            case 0: return 0;
+            case 1: bankOne.depositClass(); break;
+            case 2: bankOne.withdrawClass(); break;
+            case 3: bankOne.balance(); break;
+        }
     }
     return 0;
 }
