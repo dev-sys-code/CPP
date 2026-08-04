@@ -26,7 +26,12 @@ int main() {
                 std::cin >> amount;
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 withdraw(money, card, amount); break;
+                
             case 2:
+                std::cout << "£";
+                std::cin >> amount;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                deposit(money, card, amount); break;
 
             case 3: 
                 std::cout << "\n\nCash: £" << money << " | Card: £" << card << "\n"; 
