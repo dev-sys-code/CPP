@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "withdraw.hpp"
 #include "deposit.hpp"
 
@@ -27,7 +28,7 @@ public:
     }
 
     void balance() {
-        std::cout << "\n\nCash: £" << money << " | Card: £" << card << "\n"; 
+        std::cout << "\n\nCash: £" << std::fixed << std::setprecision(2) << money << " | Card: £" << card << "\n"; 
     }
 };
 
