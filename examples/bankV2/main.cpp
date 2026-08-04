@@ -14,20 +14,20 @@ public:
 
     void withdrawClass() {
         std::cout << "£";
-        std::cin >> this->amount;
+        std::cin >> amount;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        withdraw(this->money, this->card, this->amount);
+        withdraw(money, card, amount);
     }
 
     void depositClass() {
         std::cout << "£";
-        std::cin >> this->amount;
+        std::cin >> amount;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        deposit(this->money, this->card, this->amount);
+        deposit(money, card, amount);
     }
 
     void balance() {
-        std::cout << "\n\nCash: £" << this->money << " | Card: £" << this->card << "\n"; 
+        std::cout << "\n\nCash: £" << money << " | Card: £" << card << "\n"; 
     }
 };
 
