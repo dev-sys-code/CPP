@@ -46,8 +46,8 @@ int main() {
             << "(3) View Balance\n\n"
             << "(4) Create Bank\n"
             << "(5) Delete Bank\n\n"
-            << "(0) Exit\n>_"
-            << "====================";
+            << "(0) Exit\n"
+            << "====================\n>_ ";
 
         std::cin >> choice;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
