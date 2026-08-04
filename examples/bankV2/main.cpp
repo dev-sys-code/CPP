@@ -3,6 +3,9 @@
 #include <vector>
 #include "withdraw.hpp"
 #include "deposit.hpp"
+#include "createBank.hpp"
+#include "deleteBank.hpp"
+#include "renameBank.hpp"
 
 class Bank {
 private:
@@ -38,7 +41,7 @@ void error(const std::string msg) { std::cout << "[Error] " << msg << "\n"; }
 
 int main() {
     int choice{}, temp{};
-    
+
     std::vector<Bank> banks{};
     Bank bankOne(50, 50, 0);
 
