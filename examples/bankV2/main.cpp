@@ -50,8 +50,8 @@ int main() {
 
         switch (choice) {
             case 0: return 0;
-            case 1: bankOne.depositClass(); break;
-            case 2: bankOne.withdrawClass(); break;
+            case 1: bankOne.withdrawClass(); break;
+            case 2: bankOne.depositClass(); break;
             case 3: bankOne.balance(); break;
         }
     }
