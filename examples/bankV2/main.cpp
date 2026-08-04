@@ -40,14 +40,20 @@ int main() {
 
     while (true) {
         std::cout 
-            << "\n======= Bank =======\n"
-            << "(1) Withdraw\n"
-            << "(2) Deposit\n"
-            << "(3) View Balance\n\n"
-            << "(4) Create Bank\n"
-            << "(5) Delete Bank\n\n"
-            << "(0) Exit\n"
-            << "====================\n>_ ";
+            << "______________________\n"
+            << "|        Bank        |\n"
+            << "|                    |\n"
+            << "| (1) Withdraw       |\n"
+            << "| (2) Deposit        |\n"
+            << "| (3) View Balance   |\n"
+            << "|                    |\n"
+            << "| (4) Create Bank    |\n"
+            << "| (5) Delete Bank    |\n"
+            << "| (6) View Banks     |\n"
+            << "| (7) Rename a Bank  |\n"
+            << "|                    |\n"
+            << "| (0) Exit           |\n"
+            << "|____________________|\n>_ ";
 
         std::cin >> choice;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
