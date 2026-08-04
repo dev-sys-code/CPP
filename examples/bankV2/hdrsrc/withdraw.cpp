@@ -1,7 +1,7 @@
 #include <iostream>
 #include "withdraw.hpp"
 
-void buy(double& money, double& card, const double amount) {
+static void buy(double& money, double& card, const double amount) {
     card -= amount;
     money += amount;
     std::cout << "Thanks for using us!\n";
