@@ -9,12 +9,8 @@ private:
     double amount{};
 
 public:
-    Bank(double m, double c, double a) {
-        this->money = m;
-        this->card = c;
-        this->amount = a;
-    }
-
+    Bank(double m, double c, double a)
+        : money{m}, card{c}, amount{a} {};
     void withdrawClass() {
         std::cout << "£";
         std::cin >> this->amount;
