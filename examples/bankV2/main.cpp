@@ -43,7 +43,6 @@ public:
         for (auto i : banks) {
             std::cout << "- " << i << "\n";
         }
-
         std::cout << "Press [ENTER] to continue\n";
         std::cin.get();
     }
@@ -88,7 +87,7 @@ int main() {
             case 4: break;
             case 5: break;
             case 6: bankOne.viewBanks(banks); break;
-            case 7: break;
+            case 7: renameBank(banks); break;
             default: error("Out of range (0-7 Only)");
         }
     }
