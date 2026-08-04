@@ -2,6 +2,27 @@
 #include "withdraw.hpp"
 #include "deposit.hpp"
 
+class Person {
+private:
+    double money{50};
+    double card{50};
+    double amount{};
+
+public:
+    Person(double m, double c, double a) {
+        this->money = m;
+        this->card = c;
+        this->amount = a;
+    }
+
+    void withdrawClass() {
+        std::cout << "£";
+        std::cin >> amount;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        withdraw(this->money, this->card, this->amount);
+    }
+};
+
 void error(const std::string msg) { std::cout << "[Error] " << msg << "\n"; }
 
 int main() {
@@ -21,12 +42,12 @@ int main() {
 
         switch (choice) {
             case 0: return 0;
-            case 1: 
+            case 1:
                 std::cout << "£";
                 std::cin >> amount;
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 withdraw(money, card, amount); break;
-                
+
             case 2:
                 std::cout << "£";
                 std::cin >> amount;
