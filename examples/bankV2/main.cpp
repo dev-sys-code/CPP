@@ -38,7 +38,7 @@ public:
         std::cout << "\n\nCash: £" << std::fixed << std::setprecision(2) << money << " | Card: £" << card << "\n"; 
     }
 
-    void viewBanks(const std::vector<std::string> banks) {
+    void viewBanks(const std::vector<std::string>& banks) {
         std::cout << "\n";
         for (auto i : banks) {
             std::cout << "- " << i << "\n";
