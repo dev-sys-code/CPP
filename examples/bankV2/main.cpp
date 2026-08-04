@@ -39,9 +39,13 @@ public:
     }
 
     void viewBanks(const std::vector<std::string> banks) {
+        std::cout << "\n";
         for (auto i : banks) {
             std::cout << "- " << i << "\n";
         }
+
+        std::cout << "Press [ENTER] to continue\n";
+        std::cin.get();
     }
 
 };
