@@ -38,7 +38,11 @@ void error(const std::string msg) { std::cout << "[Error] " << msg << "\n"; }
 
 int main() {
     int choice{}, temp{};
+    
+    std::vector<Bank> banks{};
     Bank bankOne(50, 50, 0);
+
+    banks.push_back(bankOne);
 
     while (true) {
         std::cout 
