@@ -38,6 +38,11 @@ public:
         std::cout << "\n\nCash: £" << std::fixed << std::setprecision(2) << money << " | Card: £" << card << "\n"; 
     }
 
+    void viewBanks(const std::vector<std::string> banks) {
+        for (auto i : banks) {
+            std::cout << "- " << i << "\n";
+        }
+    }
 
 };
 
@@ -78,7 +83,7 @@ int main() {
             case 3: bankOne.balance(); break;
             case 4: break;
             case 5: break;
-            case 6: break;
+            case 6: bankOne.viewBanks(banks); break;
             case 7: break;
             default: error("Out of range (0-7 Only)");
         }
