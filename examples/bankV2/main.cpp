@@ -9,14 +9,16 @@
 
 class Bank {
 private:
-    std::string name{"Untitled Bank"};
+    std::string name{};
     double money{50};
     double card{50};
     double amount{};
 
 public:
-    Bank(double m, double c, double a)
-        : money{m}, card{c}, amount{a} {};
+    Bank(double m, double c, double a, std::string n)
+        : money{m}, card{c}, amount{a}, name(n) {};
+
+    std::string getName() { return name; }
 
     void withdrawClass() {
         std::cout << "£";
@@ -35,6 +37,8 @@ public:
     void balance() {
         std::cout << "\n\nCash: £" << std::fixed << std::setprecision(2) << money << " | Card: £" << card << "\n"; 
     }
+
+
 };
 
 void error(const std::string msg) { std::cout << "[Error] " << msg << "\n"; }
@@ -42,10 +46,10 @@ void error(const std::string msg) { std::cout << "[Error] " << msg << "\n"; }
 int main() {
     int choice{}, temp{};
 
-    std::vector<Bank> banks{};
-    Bank bankOne(50, 50, 0);
+    std::vector<std::string> banks{};
+    Bank bankOne(50, 50, 0, "Untitled Bank");
 
-    banks.push_back(bankOne);
+    banks.push_back(bankOne.getName());
 
     while (true) {
         std::cout 
