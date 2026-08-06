@@ -35,11 +35,15 @@ public:
     }
 
     void balance() {
-        int dp{};
-        std::cout << "\nDecimal places: (1-5)\n>_ ";
-        std::cin >> dp;
-        if (dp > 5) { dp = 5; }
-        std::cout << "\n\nCash: £" << std::fixed << std::setprecision(dp) << money << " | Card: £" << card << "\n"; 
+        static int dp{};
+        if (dp > 0) {
+            std::cout << "\n\nCash: £" << std::fixed << std::setprecision(dp) << money << " | Card: £" << card << "\n"; 
+        } else {
+            std::cout << "\nDecimal places: (1-5)\n>_ ";
+            std::cin >> dp;
+            if (dp > 5) { dp = 5; }
+            std::cout << "\n\nCash: £" << std::fixed << std::setprecision(dp) << money << " | Card: £" << card << "\n"; 
+        }
     }
 
     void viewBanks(const std::vector<std::string>& banks) {
