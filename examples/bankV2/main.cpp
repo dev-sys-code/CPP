@@ -15,8 +15,8 @@ private:
     double amount{};
 
 public:
-    Bank(double m, double c, double a, std::string n)
-        : money{m}, card{c}, amount{a}, name(n) {};
+    Bank(double m, double c, double a, std::string n):
+        money{m}, card{c}, amount{a}, name(n) {};
 
     std::string getName() { return name; }
 
@@ -35,7 +35,11 @@ public:
     }
 
     void balance() {
-        std::cout << "\n\nCash: £" << std::fixed << std::setprecision(2) << money << " | Card: £" << card << "\n"; 
+        int dp{};
+        std::cout << "\nDecimal places: (1-5)\n>_ ";
+        std::cin >> dp;
+        if (dp > 5) { dp = 5; }
+        std::cout << "\n\nCash: £" << std::fixed << std::setprecision(dp) << money << " | Card: £" << card << "\n"; 
     }
 
     void viewBanks(const std::vector<std::string>& banks) {
