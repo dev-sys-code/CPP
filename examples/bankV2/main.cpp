@@ -59,7 +59,7 @@ public:
 
 };
 
-void error(const std::string msg) { std::cout << "[Error] " << msg << "\n"; }
+void error(const std::string& msg) { std::cout << "[Error] " << msg << "\n"; }
 
 int main() {
     int choice{}, temp{};
