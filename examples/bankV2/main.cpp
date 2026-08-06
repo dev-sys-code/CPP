@@ -42,6 +42,8 @@ public:
             if (dp > 5) { dp = 2; }
         }
         std::cout << "\n\nCash: £" << std::fixed << std::setprecision(dp) << money << " | Card: £" << card << "\n"; 
+        std::cout << "Press [ENTER] to continue\n";
+        std::cin.get();
     }
 
     void viewBanks(const std::vector<std::string>& banks) {
