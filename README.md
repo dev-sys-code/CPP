@@ -1,7 +1,7 @@
 # C++ code
 ### Hope to become an OS dev or Game dev
 
-### <em>Cheat sheet</em>
+### <u><em>Cheat sheet</em></u>
 
 `alignas - Specifying custom memory alignment`
 
