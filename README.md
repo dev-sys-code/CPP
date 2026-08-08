@@ -1,7 +1,6 @@
 # C++ code
 ### Hope to become an OS dev or Game dev
 
-
 ### **Cheat sheet**
 
 `alignas - Specifying custom memory alignment`
